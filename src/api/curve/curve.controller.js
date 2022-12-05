@@ -6,10 +6,7 @@ module.exports = {
       const curve = await curveSevice.getCurves();
       return res.status(200).json(curve);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 
@@ -18,10 +15,7 @@ module.exports = {
       const curve = await curveSevice.postCurve(req);
       return res.status(200).json(curve);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 };

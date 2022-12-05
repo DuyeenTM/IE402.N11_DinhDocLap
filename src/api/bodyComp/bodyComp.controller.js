@@ -7,10 +7,7 @@ module.exports = {
 
       return res.status(200).json(bodyComp);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 
@@ -19,10 +16,7 @@ module.exports = {
       const bodyComp = await bodyCompSevice.postBodyComp(req);
       return res.status(200).json(bodyComp);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 };

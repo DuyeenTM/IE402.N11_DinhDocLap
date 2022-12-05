@@ -6,10 +6,7 @@ module.exports = {
       const polygon = await polygonSevice.getPolygons();
       return res.status(200).json(polygon);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server?",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 
@@ -18,10 +15,7 @@ module.exports = {
       const polygon = await polygonSevice.postPolygon(req);
       return res.status(200).json(polygon);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 
@@ -30,10 +24,7 @@ module.exports = {
       const polygon = await polygonSevice.post(req);
       return res.status(200).json(polygon);
     } catch (error) {
-      return res.status(200).json({
-        errCode: -1,
-        errMessage: "Error from server",
-      });
+      return res.status(500).json({ message: error.message });
     }
   },
 };
