@@ -1,10 +1,10 @@
-const nodeSevice = require("./node.sevice");
+const prismSevice = require("./prism.sevice");
 
 module.exports = {
-  getNodes: async function (req, res) {
+  getPrisms: async function (req, res) {
     try {
-      const node = await nodeSevice.getNodes();
-      return res.status(200).json(node);
+      const prism = await prismSevice.getPrisms(req);
+      return res.status(200).json(prism);
     } catch (error) {
       return res.status(200).json({
         errCode: -1,
@@ -13,10 +13,10 @@ module.exports = {
     }
   },
 
-  getNode: async function (req, res) {
+  postPrism: async function (req, res) {
     try {
-      const node = await nodeSevice.getNode(req);
-      return res.status(200).json(node);
+      const prism = await prismSevice.postPrism(req);
+      return res.status(200).json(prism);
     } catch (error) {
       return res.status(200).json({
         errCode: -1,
@@ -25,10 +25,10 @@ module.exports = {
     }
   },
 
-  postNode: async function (req, res) {
+  post: async function (req, res) {
     try {
-      const node = await nodeSevice.postNode(req);
-      return res.status(200).json(node);
+      const prism = await prismSevice.post(req);
+      return res.status(200).json(prism);
     } catch (error) {
       return res.status(200).json({
         errCode: -1,

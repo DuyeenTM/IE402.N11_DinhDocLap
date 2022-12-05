@@ -1,10 +1,10 @@
-const nodeSevice = require("./node.sevice");
+const faceSevice = require("./face.sevice");
 
 module.exports = {
-  getNodes: async function (req, res) {
+  getFaces: async function (req, res) {
     try {
-      const node = await nodeSevice.getNodes();
-      return res.status(200).json(node);
+      const face = await faceSevice.getFaces();
+      return res.status(200).json(face);
     } catch (error) {
       return res.status(200).json({
         errCode: -1,
@@ -13,10 +13,10 @@ module.exports = {
     }
   },
 
-  getNode: async function (req, res) {
+  getFace: async function (req, res) {
     try {
-      const node = await nodeSevice.getNode(req);
-      return res.status(200).json(node);
+      const face = await faceSevice.getFace(req);
+      return res.status(200).json(face);
     } catch (error) {
       return res.status(200).json({
         errCode: -1,
@@ -25,10 +25,10 @@ module.exports = {
     }
   },
 
-  postNode: async function (req, res) {
+  postFace: async function (req, res) {
     try {
-      const node = await nodeSevice.postNode(req);
-      return res.status(200).json(node);
+      const face = await faceSevice.postFace(req);
+      return res.status(200).json(face);
     } catch (error) {
       return res.status(200).json({
         errCode: -1,
