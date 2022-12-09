@@ -11,11 +11,11 @@ module.exports = {
         return { errorCode: 201, mess: "All input is required" };
       }
       //check username exist
-      const oldUser = await User.findOne({ username });
+      const existUser = await User.findOne({ username });
 
-      if (oldUser && (await bcrypt.compare(password, oldUser.password))) {
+      if (existUser && (await bcrypt.compare(password, existUser.password))) {
         const token = jwt.sign(
-          { user_id: oldUser._id, username },
+          { userId: existUser._id, username },
           process.env.TOKEN_KEY,
           {
             expiresIn: "3d",
@@ -45,10 +45,11 @@ module.exports = {
         const user = await User.create({
           username,
           password: encryptedPassword,
+          role: 2,
         });
 
         const token = jwt.sign(
-          { user_id: user._id, username },
+          { userId: user._id, username },
           process.env.TOKEN_KEY,
           {
             expiresIn: "3d",
