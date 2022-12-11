@@ -64,11 +64,18 @@ module.exports = {
           const nodeArr = data[i].rings;
           const idNodes = [];
           for (let j = 0; j < nodeArr.length; ++j) {
-            const node = await Node.create({
+            const node = await Node.findOne({
               x: nodeArr[j][0],
               y: nodeArr[j][1],
               z: nodeArr[j][2],
             });
+            if (!node) {
+              node = await Node.create({
+                x: nodeArr[j][0],
+                y: nodeArr[j][1],
+                z: nodeArr[j][2],
+              });
+            }
             idNodes.push(node._id);
           }
           const face = await Face.create({

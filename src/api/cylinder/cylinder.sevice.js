@@ -61,11 +61,18 @@ module.exports = {
         const data = req.body.features;
         for (let i = 0; i < data.length; ++i) {
           const nodeArr = data[i].geometry.coordinates;
-          const node = await Node.create({
+          const node = await Node.findOne({
             x: nodeArr[0],
             y: nodeArr[1],
             z: nodeArr[2],
           });
+          if (!node) {
+            node = await Node.create({
+              x: nodeArr[0],
+              y: nodeArr[1],
+              z: nodeArr[2],
+            });
+          }
           const cylinder = await Cylinder.create({
             idNode: node._id,
             radius: req.body.r,

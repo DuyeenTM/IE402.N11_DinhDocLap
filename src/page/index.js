@@ -32,53 +32,6 @@ require([
     responseType: "json",
   };
 
-  const map = new Map({
-    basemap: "topo-vector",
-    ground: "world-elevation",
-    layers: [
-      // cylinder1,
-      // cylinder2,
-      // cylinder3,
-      // cylinder4,
-      // line1,
-      // line2,
-      // line3,
-      // line4,
-      // line5,
-      // line6,
-      // line7,
-      prism1,
-      // prism2,
-      // prism3,
-      // prism4,
-      // prism5,
-      // prism6,
-      // prism7,
-      // prism8,
-      // prism9,
-      // prism10,
-      // prism11,
-      // prism12,
-      // prism13,
-      // prism14,
-      // prism15,
-      // prism16,
-      // prism17,
-      // prism18,
-      // prism19,
-      // prism20,
-      // prism21,
-      // prism22,
-      // prism23,
-      // prism24,
-      // prism25,
-      // prism26,
-      // prism27,
-      // prism28,
-      // prism29,
-      // prism30,
-    ], //end layers
-  });
   // request json
 
   // detail in front of the building
@@ -187,8 +140,19 @@ require([
   //geojson layer
 
   // flag
+
+  async function fetchCylinder1(link) {
+    const res = await fetch(link)
+      .then((response) => response.json())
+      .then((data) => data);
+    console.log(res);
+    return res;
+  }
+  const urlCylinder1 = fetchCylinder1(
+    "http://localhost:3000/api/v1/cylinder/getByRAndHAndColor?r=0.13&h=7.63&color=rgb(204, 204, 204)"
+  );
   const cylinder1 = new GeoJSONLayer({
-    url: "http://localhost:3000/api/v1/cylinder/getByRAndHAndColor?r=0.13&h=7.63&color=rgb(204, 204, 204)",
+    url: urlCylinder1,
   });
   cylinder1.renderer = {
     type: "simple",
@@ -1022,7 +986,53 @@ require([
   //     ],
   //   },
   // };
-
+  const map = new Map({
+    basemap: "topo-vector",
+    ground: "world-elevation",
+    layers: [
+      cylinder1,
+      // cylinder2,
+      // cylinder3,
+      // cylinder4,
+      // line1,
+      // line2,
+      // line3,
+      // line4,
+      // line5,
+      // line6,
+      // line7,
+      // prism1,
+      // prism2,
+      // prism3,
+      // prism4,
+      // prism5,
+      // prism6,
+      // prism7,
+      // prism8,
+      // prism9,
+      // prism10,
+      // prism11,
+      // prism12,
+      // prism13,
+      // prism14,
+      // prism15,
+      // prism16,
+      // prism17,
+      // prism18,
+      // prism19,
+      // prism20,
+      // prism21,
+      // prism22,
+      // prism23,
+      // prism24,
+      // prism25,
+      // prism26,
+      // prism27,
+      // prism28,
+      // prism29,
+      // prism30,
+    ], //end layers
+  });
   const view = new SceneView({
     container: "viewDiv",
     map: map,
