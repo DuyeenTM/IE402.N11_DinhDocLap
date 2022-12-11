@@ -1,0 +1,207 @@
+.map-3d-container {
+    margin-top: 2rem;
+}
+
+.map-3d-title {
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    font-weight: bold;
+    color: #686868;
+}
+
+.map-3d-bottom-navigation {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.map-3d-block {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #5b432e;
+}
+
+.map-3d-block:first-child :hover,
+.map-3d-block-active:first-child {
+    background: #c9ab5c;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.map-3d-block:nth-child(2):hover,
+.map-3d-block-active:nth-child(2) {
+    background: #758954;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.map-3d-block:nth-child(3):hover,
+.map-3d-block-active:nth-child(3) {
+    background: #579e7c;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.map-3d-block:last-child :hover,
+.map-3d-block-active:last-child {
+    background: #76b389;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.map-3d-block-detail {
+    padding: 1rem;
+    display: block;
+}
+
+.map-3d-block-detail h3 {
+    font-family: "Be Vietnam", sans-serif;
+}
+
+.map-3d-block-detail p {
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.map-3d-block-detail-watch-more {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.map-3d-block-detail-watch-more:hover {
+    color: #fff;
+}
+
+.map-3d-block-detail-watch-more a {
+    font-family: "Be Vietnam", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    color: #0c4c87;
+    margin-right: 0.25rem;
+}
+
+.map-3d-block-detail-watch-more a {
+    font-family: "Be Vietnam", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    color: #0c4c87;
+}
+
+.map-3d-icon-watch-more {
+    color: #0c4c87;
+}
+
+.map-3d-block-detail ul {
+    list-style-type: square;
+}
+
+.map-3d-block-detail ul li a {
+    color: #5b432e;
+    font-family: "Be Vietnam", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.offcanvas-background {
+    background: #c9ab5c !important;
+    border-radius: 10px;
+    width: 662px !important;
+    height: 70vh;
+    margin-top: 5.5rem;
+    padding: 10px;
+}
+
+.offcanvas-background1 {
+    background: #758954 !important;
+    border-radius: 10px;
+    width: 662px !important;
+    height: 70vh;
+    margin-top: 5.5rem;
+    padding: 10px;
+}
+
+.offcanvas-background2 {
+    background: #579e7c !important;
+    border-radius: 10px;
+    width: 662px !important;
+    height: 70vh;
+    margin-top: 5.5rem;
+    padding: 10px;
+}
+
+.offcanvas-background3 {
+    background: #76b389 !important;
+    border-radius: 10px;
+    width: 662px !important;
+    height: 70vh;
+    margin-top: 5.5rem;
+    padding: 10px;
+}
+
+.map-3d-feedback {
+    background: #2f9752;
+    border-radius: 5px;
+    padding: 5px 30px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.map-3d-feedback a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.offcanvas-header h5 {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+.offcanvas-content {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.offcanvas-content-detail {
+    width: 90%;
+    color: #fff;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.toggle-icon-off-detail {
+    color: #fff;
+    font-size: 32px;
+    width: 10%;
+}
+
+#viewDiv {
+    width: 100%;
+    height: 70vh;
+    padding: 0;
+    border: 1px solid #000;
+}
