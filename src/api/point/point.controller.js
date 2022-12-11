@@ -18,4 +18,13 @@ module.exports = {
       return res.status(500).json({ message: error.message });
     }
   },
+
+  post: async function (req, res) {
+    try {
+      const point = await pointSevice.post(req);
+      return res.status(200).json(point);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
 };

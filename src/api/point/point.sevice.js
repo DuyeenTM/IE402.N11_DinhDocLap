@@ -17,7 +17,7 @@ module.exports = {
             symbol: res[i].symbol,
           });
         }
-        resolve(res);
+        resolve(newRes);
       } catch (error) {
         reject(error);
       }
@@ -37,6 +37,36 @@ module.exports = {
             styleName: data.styleName,
           },
         });
+        resolve(res);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  },
+
+  post: function (req) {
+    return new Promise(async function (resolve, reject) {
+      try {
+        const data = req.body;
+        const res = [];
+        for (let i = 0; i < data.length; ++i) {
+          const node = await Node.create({
+            x: data[i].x,
+            y: data[i].y,
+            z: data[i].z,
+          });
+
+          const point = await Point.create({
+            type: "point",
+            idNode: node._id,
+            symbol: {
+              type: "web-style",
+              name: data[i].symbol.name,
+              styleName: data[i].symbol.styleName,
+            },
+          });
+          res.push(point);
+        }
         resolve(res);
       } catch (error) {
         reject(error);

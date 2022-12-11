@@ -23,8 +23,8 @@ module.exports = {
               rings: arrFace,
               symbol: {
                 type: "simple-fill",
-                color: res[0].color,
-                outline: { color: res.color, width: 1 },
+                color: res[i].color,
+                outline: { color: res[i].color, width: 1 },
               },
             });
           }
@@ -46,6 +46,39 @@ module.exports = {
           des: data.des,
         });
         resolve(res);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  },
+
+  post: function (req) {
+    return new Promise(async function (resolve, reject) {
+      try {
+        const data = req.body;
+        const idFaces = [];
+        const res = {
+          color: data[0].symbol.color,
+        };
+        for (let i = 0; i < data.length; ++i) {
+          const nodeArr = data[i].rings;
+          const idNodes = [];
+          for (let j = 0; j < nodeArr.length; ++j) {
+            const node = await Node.create({
+              x: nodeArr[j][0],
+              y: nodeArr[j][1],
+              z: nodeArr[j][2],
+            });
+            idNodes.push(node._id);
+          }
+          const face = await Face.create({
+            idNodes: idNodes,
+          });
+          idFaces.push(face._id);
+        }
+        res.idFaces = idFaces;
+        const curve = await Curve.create(res);
+        resolve(curve);
       } catch (error) {
         reject(error);
       }

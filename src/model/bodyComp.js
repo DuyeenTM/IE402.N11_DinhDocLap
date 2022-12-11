@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const BodyComp = new Schema({
   idFaces: [Schema.Types.ObjectId],
-  color: [Number],
+  color: String,
   des: String,
 });
 

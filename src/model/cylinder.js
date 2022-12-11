@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const Cylinder = new Schema({
   idNode: Schema.Types.ObjectId,
-  r: Number,
-  h: Number,
+  radius: Number,
+  height: Number,
   color: String,
   des: String,
 });

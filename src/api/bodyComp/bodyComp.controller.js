@@ -19,4 +19,13 @@ module.exports = {
       return res.status(500).json({ message: error.message });
     }
   },
+
+  post: async function (req, res) {
+    try {
+      const bodyComp = await bodyCompSevice.post(req);
+      return res.status(200).json(bodyComp);
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
 };

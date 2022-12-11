@@ -4,5 +4,6 @@ const bodyCompController = require("./bodyComp.controller");
 
 router.get("/getAll", bodyCompController.getBodyComps);
 router.post("/post", bodyCompController.postBodyComp);
+router.post("/postFast", bodyCompController.post);
 
 module.exports = router;
