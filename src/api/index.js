@@ -10,6 +10,7 @@ const faceRouter = require("./face");
 const cylinderRouter = require("./cylinder");
 const curveRouter = require("./curve");
 const bodyCompRouter = require("./bodyComp");
+const authRouter = require("./auth");
 
 router.use("/bodyComp", bodyCompRouter);
 router.use("/curve", curveRouter);
@@ -20,4 +21,6 @@ router.use("/point", pointRouter);
 router.use("/polygon", polygonRouter);
 router.use("/prism", prismRouter);
 router.use("/node", nodeRouter);
+router.use("/auth", authRouter);
+
 module.exports = router;
