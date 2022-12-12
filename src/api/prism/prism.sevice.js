@@ -7,8 +7,7 @@ module.exports = {
     return new Promise(async function (resolve, reject) {
       try {
         const res = await Prism.find({
-          color: req.query.color,
-          height: req.query.h,
+          name: req.query.name,
         });
         if (res.length === 0) resolve(res);
         const newRes = [];
@@ -49,6 +48,7 @@ module.exports = {
           idFace: data.idFace,
           height: data.h,
           color: data.color,
+          name: data.name,
           des: data.des,
         });
         resolve(res);
@@ -72,14 +72,14 @@ module.exports = {
               y: nodeArr[j][1],
               z: nodeArr[j][2],
             });
-            if (!node) {
-              node = await Node.create({
+            if (node === null) {
+              const node1 = await Node.create({
                 x: nodeArr[j][0],
                 y: nodeArr[j][1],
                 z: nodeArr[j][2],
               });
-            }
-            idNodes.push(node._id);
+              idNodes.push(node1._id);
+            } else idNodes.push(node._id);
           }
           const face = await Face.create({
             idNodes: idNodes,
@@ -88,6 +88,7 @@ module.exports = {
             idFace: face._id,
             height: req.body.h,
             color: req.body.color,
+            name: req.body.name,
             des: req.body.generator,
           });
           res.push(prism);

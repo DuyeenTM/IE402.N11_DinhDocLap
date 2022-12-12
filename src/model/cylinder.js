@@ -7,6 +7,7 @@ const Cylinder = new Schema({
   height: Number,
   color: String,
   des: String,
+  name: String,
 });
 
 module.exports = mongoose.model("Cylinder", Cylinder);

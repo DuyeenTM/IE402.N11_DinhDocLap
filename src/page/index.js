@@ -36,7 +36,7 @@ require([
 
   // detail in front of the building
   esriRequest(
-    "http://localhost:3000/api/v1/bodyComp/getAll",
+    "http://localhost:3000/api/v1/bodyComp/getByName?name=body_comp1_1",
     json_options
   ).then(function (response) {
     var graphicsLayer = new GraphicsLayer();
@@ -45,15 +45,16 @@ require([
     });
     map.add(graphicsLayer);
   });
-  esriRequest("http://localhost:3000/api/v1/curve/getAll", json_options).then(
-    function (response) {
-      var graphicsLayer = new GraphicsLayer();
-      response.data.forEach(function (data) {
-        graphicsLayer.add(createGraphic(data));
-      });
-      map.add(graphicsLayer);
-    }
-  );
+  esriRequest(
+    "http://localhost:3000/api/v1/curve/getByName?name=curve1_1",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
   // esriRequest("./Json/curve2.json", json_options).then(function (response) {
   //   var graphicsLayer = new GraphicsLayer();
   //   response.data.forEach(function (data) {
@@ -88,16 +89,56 @@ require([
   );
 
   // doors, windown, walls and floors
-  esriRequest("http://localhost:3000/api/v1/polygon/getAll", json_options).then(
-    function (response) {
-      var graphicsLayer = new GraphicsLayer();
-      response.data.forEach(function (data) {
-        graphicsLayer.add(createGraphic(data));
-      });
-      map.add(graphicsLayer);
-    }
-  );
-
+  esriRequest(
+    "http://localhost:3000/api/v1/polygon/getByName?name=polygon1_1",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
+  esriRequest(
+    "http://localhost:3000/api/v1/polygon/getByName?name=polygon1_2",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
+  esriRequest(
+    "http://localhost:3000/api/v1/polygon/getByName?name=polygon1_3",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
+  esriRequest(
+    "http://localhost:3000/api/v1/polygon/getByName?name=polygon1_4",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
+  esriRequest(
+    "http://localhost:3000/api/v1/polygon/getByName?name=polygon1_5",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
   // // the polygon of the special detail in front
   // esriRequest("./Json/polygon2.json", json_options).then(function (response) {
   //   var graphicsLayer = new GraphicsLayer();
@@ -127,7 +168,7 @@ require([
 
   // the line around the windown
   esriRequest(
-    "http://localhost:3000/api/v1/line/getPolyline",
+    "http://localhost:3000/api/v1/line/getPolylineByName?name=polyline1_1",
     json_options
   ).then(function (response) {
     var graphicsLayer = new GraphicsLayer();
@@ -136,23 +177,41 @@ require([
     });
     map.add(graphicsLayer);
   });
-
+  esriRequest(
+    "http://localhost:3000/api/v1/line/getPolylineByName?name=polyline1_2",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
+  esriRequest(
+    "http://localhost:3000/api/v1/line/getPolylineByName?name=polyline1_3",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
+  esriRequest(
+    "http://localhost:3000/api/v1/line/getPolylineByName?name=polyline1_4",
+    json_options
+  ).then(function (response) {
+    var graphicsLayer = new GraphicsLayer();
+    response.data.forEach(function (data) {
+      graphicsLayer.add(createGraphic(data));
+    });
+    map.add(graphicsLayer);
+  });
   //geojson layer
 
   // flag
-
-  async function fetchCylinder1(link) {
-    const res = await fetch(link)
-      .then((response) => response.json())
-      .then((data) => data);
-    console.log(res);
-    return res;
-  }
-  const urlCylinder1 = fetchCylinder1(
-    "http://localhost:3000/api/v1/cylinder/getByRAndHAndColor?r=0.13&h=7.63&color=rgb(204, 204, 204)"
-  );
   const cylinder1 = new GeoJSONLayer({
-    url: urlCylinder1,
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder1",
   });
   cylinder1.renderer = {
     type: "simple",
@@ -171,26 +230,121 @@ require([
     },
   };
 
-  // // buttress
-  // const cylinder2 = new GeoJSONLayer({
-  //   url: "./Geojson/cylinder2.geojson",
-  // });
-  // cylinder2.renderer = {
-  //   type: "simple",
-  //   symbol: {
-  //     type: "point-3d",
-  //     symbolLayers: [
-  //       {
-  //         type: "object",
-  //         width: 0.5,
-  //         height: 5,
-  //         depth: 0.5,
-  //         resource: { primitive: "cylinder" },
-  //         material: { color: "rgb(59, 59, 59)" },
-  //       },
-  //     ],
-  //   },
-  // };
+  // buttress
+  const cylinder2_1 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder2_1",
+  });
+  cylinder2_1.renderer = {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          width: 0.5,
+          height: 5,
+          depth: 0.5,
+          resource: { primitive: "cylinder" },
+          material: { color: "rgb(59, 59, 59)" },
+        },
+      ],
+    },
+  };
+  const cylinder2_2 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder2_2",
+  });
+  cylinder2_2.renderer = {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          width: 0.5,
+          height: 5,
+          depth: 0.5,
+          resource: { primitive: "cylinder" },
+          material: { color: "rgb(59, 59, 59)" },
+        },
+      ],
+    },
+  };
+  const cylinder2_3 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder2_3",
+  });
+  cylinder2_3.renderer = {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          width: 0.5,
+          height: 5,
+          depth: 0.5,
+          resource: { primitive: "cylinder" },
+          material: { color: "rgb(59, 59, 59)" },
+        },
+      ],
+    },
+  };
+  const cylinder2_4 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder2_4",
+  });
+  cylinder2_4.renderer = {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          width: 0.5,
+          height: 5,
+          depth: 0.5,
+          resource: { primitive: "cylinder" },
+          material: { color: "rgb(59, 59, 59)" },
+        },
+      ],
+    },
+  };
+  const cylinder2_5 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder2_5",
+  });
+  cylinder2_5.renderer = {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          width: 0.5,
+          height: 5,
+          depth: 0.5,
+          resource: { primitive: "cylinder" },
+          material: { color: "rgb(59, 59, 59)" },
+        },
+      ],
+    },
+  };
+  const cylinder2_6 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/cylinder/getByName?name=cylinder2_6",
+  });
+  cylinder2_6.renderer = {
+    type: "simple",
+    symbol: {
+      type: "point-3d",
+      symbolLayers: [
+        {
+          type: "object",
+          width: 0.5,
+          height: 5,
+          depth: 0.5,
+          resource: { primitive: "cylinder" },
+          material: { color: "rgb(59, 59, 59)" },
+        },
+      ],
+    },
+  };
   // const cylinder3 = new GeoJSONLayer({
   //   url: "./Geojson/cylinder3.geojson",
   // });
@@ -233,19 +387,8 @@ require([
   // };
 
   // stairs in front
-  async function fetchPrism1(link) {
-    const res = await fetch(link)
-      .then((response) => response.json())
-      .then((data) => data);
-
-    console.log(res);
-    return res;
-  }
-  const urlPrism1 = fetchPrism1(
-    "http://localhost:3000/api/v1/prism/getByColorAndH?color=rgb(204, 204, 204)&h=0.3"
-  );
   const prism1 = new GeoJSONLayer({
-    url: urlPrism1,
+    url: "http://localhost:3000/api/v1/prism/getByName?name=prism1",
   });
   prism1.renderer = {
     type: "simple",
@@ -401,25 +544,79 @@ require([
   //   },
   // };
 
-  // // rafters
-  // const prism9 = new GeoJSONLayer({
-  //   url: "./Geojson/prism9.geojson",
-  // });
-  // prism9.renderer = {
-  //   type: "simple",
-  //   symbol: {
-  //     type: "polygon-3d",
-  //     symbolLayers: [
-  //       {
-  //         type: "extrude",
-  //         size: 1.33,
-  //         material: {
-  //           color: "rgb(154, 154, 148)",
-  //         },
-  //       },
-  //     ],
-  //   },
-  // };
+  // rafters
+  const prism9_1 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/prism/getByName?name=prism9_1",
+  });
+  prism9_1.renderer = {
+    type: "simple",
+    symbol: {
+      type: "polygon-3d",
+      symbolLayers: [
+        {
+          type: "extrude",
+          size: 1.33,
+          material: {
+            color: "rgb(154, 154, 148)",
+          },
+        },
+      ],
+    },
+  };
+  const prism9_2 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/prism/getByName?name=prism9_2",
+  });
+  prism9_2.renderer = {
+    type: "simple",
+    symbol: {
+      type: "polygon-3d",
+      symbolLayers: [
+        {
+          type: "extrude",
+          size: 1.33,
+          material: {
+            color: "rgb(154, 154, 148)",
+          },
+        },
+      ],
+    },
+  };
+  const prism9_3 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/prism/getByName?name=prism9_3",
+  });
+  prism9_3.renderer = {
+    type: "simple",
+    symbol: {
+      type: "polygon-3d",
+      symbolLayers: [
+        {
+          type: "extrude",
+          size: 1.33,
+          material: {
+            color: "rgb(154, 154, 148)",
+          },
+        },
+      ],
+    },
+  };
+  const prism9_4 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/prism/getByName?name=prism9_4",
+  });
+  prism9_4.renderer = {
+    type: "simple",
+    symbol: {
+      type: "polygon-3d",
+      symbolLayers: [
+        {
+          type: "extrude",
+          size: 1.33,
+          material: {
+            color: "rgb(154, 154, 148)",
+          },
+        },
+      ],
+    },
+  };
 
   // // Vertical column
   // const prism10 = new GeoJSONLayer({
@@ -575,9 +772,9 @@ require([
   //   },
   // };
 
-  // // the floor 2
+  // the floor 2
   // const prism18 = new GeoJSONLayer({
-  //   url: "./GeoJson/prism18.geojson",
+  //   url: "http://localhost:3000/api/v1/prism/getByColorAndH?color=rgb(186, 186, 180)&h=0.6",
   // });
   // prism18.renderer = {
   //   type: "simple",
@@ -831,7 +1028,7 @@ require([
 
   // the stairs in behind
   const line1 = new GeoJSONLayer({
-    url: "http://localhost:3000/api/v1/line/getLineByWandHandColor?w=0.2&h=1&color=rgb(192, 187, 158)",
+    url: "http://localhost:3000/api/v1/line/getByName?name=line1",
   });
   line1.renderer = {
     type: "simple",
@@ -920,28 +1117,50 @@ require([
   //     ],
   //   },
   // };
-  // const line5 = new GeoJSONLayer({
-  //   url: "./Geojson/line5.geojson",
-  // });
-  // line5.renderer = {
-  //   type: "simple",
-  //   symbol: {
-  //     type: "line-3d",
-  //     symbolLayers: [
-  //       {
-  //         type: "path",
-  //         profile: "quad",
-  //         material: {
-  //           color: "rgb(192, 187, 158)",
-  //         },
-  //         width: 0.15,
-  //         height: 2.91,
-  //         anchor: "bottom",
-  //         profileRotation: "heading",
-  //       },
-  //     ],
-  //   },
-  // };
+  const line5_1 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/line/getByName?name=line5_1",
+  });
+  line5_1.renderer = {
+    type: "simple",
+    symbol: {
+      type: "line-3d",
+      symbolLayers: [
+        {
+          type: "path",
+          profile: "quad",
+          material: {
+            color: "rgb(192, 187, 158)",
+          },
+          width: 0.15,
+          height: 2.91,
+          anchor: "bottom",
+          profileRotation: "heading",
+        },
+      ],
+    },
+  };
+  const line5_2 = new GeoJSONLayer({
+    url: "http://localhost:3000/api/v1/line/getByName?name=line5_2",
+  });
+  line5_2.renderer = {
+    type: "simple",
+    symbol: {
+      type: "line-3d",
+      symbolLayers: [
+        {
+          type: "path",
+          profile: "quad",
+          material: {
+            color: "rgb(192, 187, 158)",
+          },
+          width: 0.15,
+          height: 2.91,
+          anchor: "bottom",
+          profileRotation: "heading",
+        },
+      ],
+    },
+  };
   // const line6 = new GeoJSONLayer({
   //   url: "./Geojson/line6.geojson",
   // });
@@ -991,17 +1210,23 @@ require([
     ground: "world-elevation",
     layers: [
       cylinder1,
-      // cylinder2,
+      cylinder2_1,
+      cylinder2_2,
+      cylinder2_3,
+      cylinder2_4,
+      cylinder2_5,
+      cylinder2_6,
       // cylinder3,
       // cylinder4,
-      // line1,
+      line1,
       // line2,
       // line3,
       // line4,
-      // line5,
+      line5_1,
+      line5_2,
       // line6,
       // line7,
-      // prism1,
+      prism1,
       // prism2,
       // prism3,
       // prism4,
@@ -1009,7 +1234,10 @@ require([
       // prism6,
       // prism7,
       // prism8,
-      // prism9,
+      prism9_1,
+      prism9_2,
+      prism9_3,
+      prism9_4,
       // prism10,
       // prism11,
       // prism12,

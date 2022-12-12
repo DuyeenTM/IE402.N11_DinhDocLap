@@ -9,6 +9,7 @@ const symbolPolygonType = new Schema({
 
 const Polygon = new Schema({
   type: String,
+  name: String,
   idNodes: [Schema.Types.ObjectId],
   symbol: symbolPolygonType,
 });

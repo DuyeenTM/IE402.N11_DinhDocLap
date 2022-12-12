@@ -3,7 +3,7 @@ const bodyCompSevice = require("./bodyComp.sevice");
 module.exports = {
   getBodyComps: async function (req, res) {
     try {
-      const bodyComp = await bodyCompSevice.getBodyComps();
+      const bodyComp = await bodyCompSevice.getBodyComps(req);
 
       return res.status(200).json(bodyComp);
     } catch (error) {

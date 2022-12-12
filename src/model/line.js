@@ -8,6 +8,7 @@ const Line = new Schema({
   width: Number,
   height: Number,
   des: String,
+  name: String,
 });
 
 module.exports = mongoose.model("Line", Line);

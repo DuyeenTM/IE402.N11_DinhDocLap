@@ -2,11 +2,11 @@ const Node = require("../../model/node");
 const Line = require("../../model/line");
 
 module.exports = {
-  getPolyline: function () {
+  getPolyline: function (req) {
     return new Promise(async function (resolve, reject) {
       try {
         const res = await Line.find({
-          height: 0,
+          name: req.query.name,
         });
         const newRes = [];
         for (let i = 0; i < res.length; ++i) {
@@ -36,9 +36,7 @@ module.exports = {
     return new Promise(async function (resolve, reject) {
       try {
         const res = await Line.find({
-          with: req.query.w,
-          height: req.query.h,
-          color: req.query.color,
+          name: req.query.name,
         });
         if (res.length === 0) resolve(res);
         const newRes = [];
@@ -79,6 +77,7 @@ module.exports = {
           idNodes: data.idNodes,
           color: data.color,
           height: data.h,
+          name: data.name,
           width: data.w,
         });
         resolve(res);
@@ -102,14 +101,14 @@ module.exports = {
               y: nodeArr[j][1],
               z: nodeArr[j][2],
             });
-            if (!node) {
-              node = await Node.create({
+            if (node === null) {
+              const node1 = await Node.create({
                 x: nodeArr[j][0],
                 y: nodeArr[j][1],
                 z: nodeArr[j][2],
               });
-            }
-            idNodes.push(node._id);
+              idNodes.push(node1._id);
+            } else idNodes.push(node._id);
           }
           const line = await Line.create({
             type: "LineString",
@@ -117,6 +116,7 @@ module.exports = {
             height: req.body.h,
             width: req.body.w,
             color: req.body.color,
+            name: req.body.name,
             des: req.body.generator,
           });
           res.push(line);
@@ -148,6 +148,7 @@ module.exports = {
             type: "polyline",
             idNodes: idNodes,
             color: data[i].symbol.color,
+            name: data[i].name,
             height: 0,
             width: 0,
           });

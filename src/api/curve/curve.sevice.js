@@ -3,10 +3,10 @@ const Face = require("../../model/face");
 const Curve = require("../../model/curve");
 
 module.exports = {
-  getCurves: function () {
+  getCurves: function (req) {
     return new Promise(async function (resolve, reject) {
       try {
-        const res = await Curve.find();
+        const res = await Curve.find({ name: req.query.name });
         const newRes = [];
         for (let i = 0; i < res.length; ++i) {
           const faces = res[i].idFaces;
@@ -44,6 +44,7 @@ module.exports = {
           idFaces: data.idFaces,
           color: data.color,
           des: data.des,
+          name: data.name,
         });
         resolve(res);
       } catch (error) {
@@ -59,6 +60,7 @@ module.exports = {
         const idFaces = [];
         const res = {
           color: data[0].symbol.color,
+          name: data[0].name,
         };
         for (let i = 0; i < data.length; ++i) {
           const nodeArr = data[i].rings;
@@ -69,14 +71,14 @@ module.exports = {
               y: nodeArr[j][1],
               z: nodeArr[j][2],
             });
-            if (!node) {
-              node = await Node.create({
+            if (node === null) {
+              const node1 = await Node.create({
                 x: nodeArr[j][0],
                 y: nodeArr[j][1],
                 z: nodeArr[j][2],
               });
-            }
-            idNodes.push(node._id);
+              idNodes.push(node1._id);
+            } else idNodes.push(node._id);
           }
           const face = await Face.create({
             idNodes: idNodes,

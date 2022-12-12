@@ -3,7 +3,7 @@ const lineSevice = require("./line.sevice");
 module.exports = {
   getPolyline: async function (req, res) {
     try {
-      const line = await lineSevice.getPolyline();
+      const line = await lineSevice.getPolyline(req);
       return res.status(200).json(line);
     } catch (error) {
       return res.status(500).json({ message: error.message });
