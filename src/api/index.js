@@ -11,6 +11,8 @@ const cylinderRouter = require("./cylinder");
 const curveRouter = require("./curve");
 const bodyCompRouter = require("./bodyComp");
 const authRouter = require("./auth");
+const feedbackRouter = require("./feedback");
+const infoRouter = require("./info");
 
 router.use("/bodyComp", bodyCompRouter);
 router.use("/curve", curveRouter);
@@ -22,5 +24,7 @@ router.use("/polygon", polygonRouter);
 router.use("/prism", prismRouter);
 router.use("/node", nodeRouter);
 router.use("/auth", authRouter);
+router.use("/feedback", feedbackRouter);
+router.use("/info", infoRouter);
 
 module.exports = router;
