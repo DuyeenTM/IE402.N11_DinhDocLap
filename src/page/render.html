@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../styles/render.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <title>Bản đồ 3D</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="container-header">
+      <div class="header-logo">
+        <img src="../images/Logo-1.png" alt="logo" />
+      </div>
+
+      <nav class="header-nav">
+        <ul>
+          <li>
+            <a
+              href="./home.html"
+              class="header-nav-link"
+              onclick="activeNavLinkHeader(this)"
+              >Trang chủ</a
+            >
+          </li>
+          <li>
+            <a
+              class="header-nav-link"
+              onclick="activeNavLinkHeader(this)"
+              href="./visit.html"
+              >Tham quan</a
+            >
+          </li>
+          <li>
+            <a
+              class="header-nav-link header-active"
+              onclick="activeNavLinkHeader(this)"
+              href="./render.html"
+              >Bản đồ 3D</a
+            >
+          </li>
+          <li>
+            <a
+              class="header-nav-link"
+              onclick="activeNavLinkHeader(this)"
+              href="#lienhe"
+              >Liên hệ</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div id="avarta" class="avarta">
+        <img
+          src="https://i1.sndcdn.com/artworks-CjUt4ngpBVu5RJIL-nn0uQA-t500x500.jpg"
+          alt="avarta"
+        />
+        <img
+          title="LogOut"
+          id="logOut"
+          src="https://drive.google.com/uc?id=1s6PZ32Sxdw3i09soXxEqwkYM7LrGQgTn"
+          alt="logout"
+        />
+      </div>
+
+      <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
+    </header>
+
+    <div class="information-management-render-container">
+      <div class="notification-container">
+        <div class="notification-img-container">
+          <img
+            src="https://drive.google.com/uc?id=1UjdrccuXnvD6-1sRR0wkYsyTXlILK8DV"
+            alt=""
+          />
+        </div>
+        <div class="notification-text-container">
+          <h4>THÔNG BÁO:</h4>
+          <marquee direction="left" height="45" width="100%" bgcolor="white">
+            <p>
+              Ban quản lý Dinh Độc Lập thông báo khuyến mãi vé vào cổng cho các
+              đoàn học sinh/sinh viên tham quan khu di tích lịch sử từ ngày
+              06/12/2022 đến Tết nguyên đán
+            </p>
+          </marquee>
+        </div>
+      </div>
+
+      <h1 class="d3-map-title">Bản đồ 3D</h1>
+
+      <div class="d3-map-container">
+        <div class="map-container">
+          <div id="viewDiv"></div>
+          <!-- <img
+            class="main-map"
+            src="https://drive.google.com/uc?id=139cmhLkF0MxDmPZ4iaFKG-KpPnQJAYrO"
+            alt="Bản đồ 3D"
+          /> -->
+        </div>
+
+        <div class="overview-modal-container modal-container">
+          <div class="next-post-btn" onclick="architectureOpen()">▶️</div>
+          <span class="close-btn">&times;</span>
+          <div class="header-modal-container">
+            <h4 class="modal-title">Giới thiệu về Dinh độc lập</h4>
+            <button class="feedback-btn">Góp ý</button>
+          </div>
+          <div class="modal-content-container">
+            <div class="modal-content-wrapper">
+              <div class="modal-content-left">
+                <div id="overviewText"></div>
+                <img id="overviewImg" alt="Tổng quan Dinh Độc Lập" />
+              </div>
+              <div class="modal-content-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="architecture-modal-container modal-container">
+          <div class="next-post-btn" onclick="floorOpen()">▶️</div>
+          <span class="close-btn">&times;</span>
+          <div class="header-modal-container">
+            <h4 class="modal-title">Thông tin về kiến trúc Dinh độc lập</h4>
+            <button class="feedback-btn">Góp ý</button>
+          </div>
+          <div class="modal-content-container">
+            <div class="modal-content-wrapper">
+              <div class="modal-content-left">
+                <div id="architectureText"></div>
+                <img id="architectureImg" alt="Kiến trúc Dinh Độc Lập" />
+              </div>
+              <div class="modal-content-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floor-modal-container modal-container">
+          <div class="next-post-btn" onclick="siteOpen()">▶️</div>
+          <span class="close-btn">&times;</span>
+          <div class="header-modal-container">
+            <h4 class="modal-title">Thông tin các tầng Dinh độc lập</h4>
+            <button class="feedback-btn">Góp ý</button>
+          </div>
+          <div class="modal-content-container">
+            <div class="modal-content-wrapper">
+              <div class="modal-content-left">
+                <div id="floorText"></div>
+                <img id="floorImg" alt="Thông tin các tầng Dinh Độc Lập" />
+
+                <h4 class="subtitle" id="floor1">Tầng 1</h4>
+                <div class="floor1Text-1"></div>
+                <img id="floor1Img-1" alt="Phòng Khánh Tiết" />
+                <div class="floor1Text-2"></div>
+                <img id="floor1Img-2" alt="Phòng Nội Các" />
+                <div class="floor1Text-3"></div>
+                <img id="floor1Img-3" alt="Phòng Đại Yến" />
+
+                <h4 class="subtitle" id="floor2">Tầng 2</h4>
+                <div class="floor2Text-1"></div>
+                <img id="floor2Img-1" alt="Phòng làm việc của Tổng Thống" />
+                <div class="floor2Text-2"></div>
+                <img id="floor2Img-2" alt="Phòng tiếp khách nước ngoài" />
+
+                <h4 class="subtitle" id="floor3">Tầng 3</h4>
+                <div class="floor3Text"></div>
+                <img id="floor3Img" alt="Phòng Giải trí" />
+              </div>
+              <div class="modal-content-right"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sites-modal-container modal-container">
+          <div class="next-post-btn" onclick="introOpen()">▶️</div>
+          <span class="close-btn">&times;</span>
+          <div class="header-modal-container">
+            <h4 class="modal-title">Các địa điểm tham quan Dinh Độc Lập</h4>
+            <button class="feedback-btn">Góp ý</button>
+          </div>
+          <div class="modal-content-container">
+            <div class="modal-content-wrapper">
+              <div class="modal-content-left">
+                <h4 class="subtitle" id="site1">Khu cố định</h4>
+                <div class="site1Text"></div>
+                <ul id="site1-list">
+                  <li class="site1-text1"></li>
+                  <img id="site1-img1" src="" alt="" />
+
+                  <li class="site1-text2"></li>
+                  <img id="site1-img2" src="" alt="" />
+
+                  <li class="site1-text3"></li>
+                  <img id="site1-img3" src="" alt="" />
+
+                  <li class="site1-text4"></li>
+                  <img id="site1-img4" src="" alt="" />
+
+                  <li class="site1-text5"></li>
+                  <img id="site1-img5" src="" alt="" />
+                </ul>
+
+                <h4 class="subtitle" id="site2">Khu chuyên đề</h4>
+                <div class="site2Text"></div>
+                <img id="site2Img" />
+
+                <h4 class="subtitle" id="site3">Khu bổ sung</h4>
+                <div class="site3Text"></div>
+                <img id="site3Img" />
+              </div>
+
+              <div class="modal-content-right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="information-select-section">
+        <div class="introducing-tab-container tab-container">
+          <h4 class="tab-title">Giới thiệu Dinh Độc Lập</h4>
+          <p class="tab-description">
+            Dinh Độc Lập là một trong những công trình kiến trúc độc đáo và nổi
+            tiếng nhất TP.HCM
+          </p>
+          <div
+            class="see-more-container"
+            id="see-more-intro"
+            onclick="introOpen()"
+          >
+            <p class="see-more-text">Xem thêm</p>
+            <span class="material-symbols-outlined"> read_more </span>
+          </div>
+        </div>
+
+        <div class="architecture-tab-container tab-container">
+          <h4 class="tab-title">Xem thông tin về kiến trúc</h4>
+          <p class="tab-description">
+            Kiến trúc đã kết hợp hài hòa giữa nghệ thuật kiến trúc hiện đại và
+            kiến trúc truyền thống Phương Đông.
+          </p>
+          <div
+            class="see-more-container"
+            id="see-more-architecture"
+            onclick="architectureOpen()"
+          >
+            <p class="see-more-text">Xem thêm</p>
+            <span class="material-symbols-outlined"> read_more </span>
+          </div>
+        </div>
+
+        <div class="floor-tab-container tab-container">
+          <h4 class="tab-title">Xem thông tin về các tầng</h4>
+          <p class="list-description" onclick="scrollToFloor('floor1')">
+            ▫ Tầng 1
+          </p>
+          <p class="list-description" onclick="scrollToFloor('floor2')">
+            ▫ Tầng 2
+          </p>
+          <p class="list-description" onclick="scrollToFloor('floor3')">
+            ▫ Tầng 3
+          </p>
+          <div
+            class="see-more-container"
+            id="see-more-floor"
+            onclick="floorOpen()"
+          >
+            <p class="see-more-text">Xem thêm</p>
+            <span class="material-symbols-outlined"> read_more </span>
+          </div>
+        </div>
+
+        <div class="sites-tab-container tab-container">
+          <h4 class="tab-title">Xem các địa điểm tham quan</h4>
+          <p class="list-description" onclick="scrollToSite('site1')">
+            ▫ Khu cố định
+          </p>
+          <p class="list-description" onclick="scrollToSite('site2')">
+            ▫ Khu chuyên đề
+          </p>
+          <p class="list-description" onclick="scrollToSite('site3')">
+            ▫ Khu bổ sung
+          </p>
+          <div
+            class="see-more-container"
+            id="see-more-sites"
+            onclick="siteOpen()"
+          >
+            <p class="see-more-text">Xem thêm</p>
+            <span class="material-symbols-outlined"> read_more </span>
+          </div>
+        </div>
+      </section>
+
+      <button class="edit-btn" onclick="handleCheckToken()">
+        Chỉnh sửa <span class="material-symbols-outlined"> edit_square </span>
+      </button>
+    </div>
+    <!-- Footer -->
+    <footer class="container-footer">
+      <div class="content-footer">
+        <a href="./home.html" class="footer-logo">
+          <img src="../images/Logo-1.png" alt="logo" />
+        </a>
+        <nav class="footer-nav">
+          <h2>Liên kết</h2>
+          <ul>
+            <li><a href="./home.html">Trang chủ</a></li>
+            <li><a href="./visit.html">Tham quan</a></li>
+            <li><a href="./render.html">Bản đồ 3D</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h2>Thông tin liên hệ</h2>
+          <ul>
+            <li>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>Điện thoại: 028.38223652</span>
+            </li>
+            <li>
+              <i class="fa fa-fax" aria-hidden="true"></i>
+              <span>Fax: 080.85008</span>
+            </li>
+            <li>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span
+                >135 Nam Kỳ Khởi Nghĩa, <br />
+                Quận 1, TP.HCM</span
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h2>Theo dõi chúng tôi</h2>
+          <div class="socials">
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </nav>
+      </div>
+      <div class="bottom">
+        <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
+      </div>
+    </footer>
+
+    <script src="../js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+      //header
+      var notyf = new Notyf({
+        duration: 2000,
+        position: {
+          x: "right",
+          y: "bottom",
+        },
+        dismissible: true,
+      });
+      const avatar = document.getElementById("avarta");
+      const btnLogIn = document.getElementById("btnLogIn");
+      const logOut = document.getElementById("logOut");
+      logOut.addEventListener("click", function () {
+        localStorage.removeItem("token");
+        notyf.success("Bạn đã đăng xuất thành công!!");
+        setTimeout(() => {
+          window.location = "./home.html";
+        }, 1000);
+      });
+
+      const token = JSON.parse(localStorage.getItem("token"));
+      if (token) {
+        avatar.style.display = "block";
+        btnLogIn.style.display = "none";
+      } else {
+        avatar.style.display = "none";
+        btnLogIn.style.display = "block";
+      }
+      // ==============================
+      const allModals = document.getElementsByClassName("modal-container");
+      const allSelections = document.getElementsByClassName("tab-container");
+
+      ////
+
+      const introClose = document.getElementsByClassName("close-btn")[0];
+      const introSelect = document.querySelector(".introducing-tab-container");
+      const overviewModal = document.querySelector(".overview-modal-container");
+      function introOpen() {
+        for (const modal of allModals) {
+          modal.style.display = "none";
+        }
+        for (var i = 0, all = allSelections.length; i < all; i++) {
+          const temp = i + 1;
+          allSelections[i].classList.remove("tab-container-active-" + temp);
+        }
+        overviewModal.style.animation = "moveRightLeft 0.5s ease-in";
+        overviewModal.style.display = "block";
+        introSelect.classList.add("tab-container-active-1");
+      }
+      introClose.onclick = function introClose() {
+        overviewModal.style.animation = "moveLeftRight 0.5s ease-out";
+        setTimeout(function () {
+          overviewModal.style.display = "none";
+        }, 500);
+        introSelect.classList.remove("tab-container-active-1");
+      };
+
+      ////
+
+      const architectureClose = document.getElementsByClassName("close-btn")[1];
+      const architectureSelect = document.querySelector(
+        ".architecture-tab-container"
+      );
+      const architectureModal = document.querySelector(
+        ".architecture-modal-container"
+      );
+      function architectureOpen() {
+        for (const modal of allModals) {
+          modal.style.display = "none";
+        }
+        for (var i = 0, all = allSelections.length; i < all; i++) {
+          const temp = i + 1;
+          allSelections[i].classList.remove("tab-container-active-" + temp);
+        }
+        architectureModal.style.animation = "moveRightLeft 0.5s ease-in";
+        architectureModal.style.display = "block";
+        architectureSelect.classList.add("tab-container-active-2");
+      }
+      architectureClose.onclick = function architectureClose() {
+        architectureModal.style.animation = "moveLeftRight 0.5s ease-out";
+        setTimeout(function () {
+          architectureModal.style.display = "none";
+        }, 500);
+        architectureSelect.classList.remove("tab-container-active-2");
+      };
+
+      ////
+
+      const floorClose = document.getElementsByClassName("close-btn")[2];
+      const floorSelect = document.querySelector(".floor-tab-container");
+      const floorModal = document.querySelector(".floor-modal-container");
+      function floorOpen() {
+        for (const modal of allModals) {
+          modal.style.display = "none";
+        }
+        for (var i = 0, all = allSelections.length; i < all; i++) {
+          const temp = i + 1;
+          allSelections[i].classList.remove("tab-container-active-" + temp);
+        }
+        floorModal.style.animation = "moveRightLeft 0.5s ease-in";
+        floorModal.style.display = "block";
+        floorSelect.classList.add("tab-container-active-3");
+      }
+      floorClose.onclick = function floorClose() {
+        floorModal.style.animation = "moveLeftRight 0.5s ease-out";
+        setTimeout(function () {
+          floorModal.style.display = "none";
+        }, 500);
+        floorSelect.classList.remove("tab-container-active-3");
+      };
+
+      ////
+
+      const sitesClose = document.getElementsByClassName("close-btn")[3];
+      const sitesSelect = document.querySelector(".sites-tab-container");
+      const sitesModal = document.querySelector(".sites-modal-container");
+      function siteOpen() {
+        for (const modal of allModals) {
+          modal.style.display = "none";
+        }
+        for (var i = 0, all = allSelections.length; i < all; i++) {
+          const temp = i + 1;
+          allSelections[i].classList.remove("tab-container-active-" + temp);
+        }
+        sitesModal.style.animation = "moveRightLeft 0.5s ease-in";
+        sitesModal.style.display = "block";
+        sitesSelect.classList.add("tab-container-active-4");
+      }
+      sitesClose.onclick = function siteClose() {
+        sitesModal.style.animation = "moveLeftRight 0.5s ease-out";
+        setTimeout(function () {
+          sitesModal.style.display = "none";
+        }, 500);
+        sitesSelect.classList.remove("tab-container-active-4");
+      };
+
+      ////
+      function scrollToFloor(value) {
+        var floor = document.getElementById(value);
+        floor.scrollIntoView({ behavior: "smooth" });
+      }
+      function scrollToSite(value) {
+        var site = document.getElementById(value);
+        site.scrollIntoView({ behavior: "smooth" });
+      }
+      ////
+
+      function handleCheckToken() {
+        // const check = false;
+        var notyf = new Notyf({
+          duration: 2000,
+          position: {
+            x: "right",
+            y: "bottom",
+          },
+          dismissible: true,
+          types: [
+            {
+              type: "error",
+              icon: false,
+            },
+          ],
+        });
+        const token = JSON.parse(localStorage.getItem("token"));
+        console.log("render:", token);
+
+        if (!token) {
+          notyf.error("Bạn cần đăng nhập để thực hiện chức năng này!");
+        } else {
+          if (token) {
+            window.location.href = "./update.html";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

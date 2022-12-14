@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 102px;
+    --text-color: #5B432E;
+    --header-bkg: #68121B;
+    --darkBrown: #C9AB5C;
+    --darkBrown2: #DCBA82;
+    --primary: #F9F2E6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Notification */
+
+.notify{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 100px;
+    font-size: 16px;
+}
+
+.notify img {
+    width: 40px;
+    margin-top: -5px;
+}
+
+.notify span{
+    font-weight: 600;
+    display: inline-block;
+    min-width: 110px;
+}
+
+/* Slider - Banner */
+
+.section-slider {
+    position: relative;
+    height: 500px;
+}
+
+.section-slider .background {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.498);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.section-slider .section-notify {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-slider .title {
+    color: #fff;
+    text-align: center;
+}
+
+.section-slider .title span {
+    font-size: 20px;
+}
+
+.section-slider .title h3 {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 48px;
+}
+
+.section-slider .btn-switch a{
+    text-align: center;
+    text-decoration: none;
+}
+
+.section-slider .btn-switch .btn-default {
+    cursor: pointer;
+    min-width: 130px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 10px;
+    border: 3px solid var(--darkBrown);
+}
+
+.section-slider .btn-switch .btn-tham-quan {
+    background-color: var(--darkBrown);
+    margin-right: 50px;
+}
+
+.section-slider .btn-switch .btn-tham-quan:hover {
+    background-color: transparent;
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.section-slider .btn-switch .btn-tin-hieu:hover {
+    background-color: var(--darkBrown);
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.section-slider .notify-ticket {
+    position: absolute;
+    text-align: center;
+    line-height: 1.6;
+    bottom: 20px;
+    left: 30px;
+    color: #fff;
+}
+
+/* Introduction */
+
+.section-introduction {
+    margin: 30px 70px;
+    text-align: center;
+}
+
+.section-introduction .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-introduction .title .line {
+    border-bottom: 1px solid #DCBA82;
+    width: 40%;
+}
+
+.section-introduction .title h2 {
+    color: #5B432E;
+    font-size: 24px;
+    font-family: "Roboto Slab", serif;
+}
+
+.section-introduction p{
+    text-align: justify;
+    margin: 10px 40px;
+    line-height: 1.6;
+}
+
+.section-introduction img {
+    width: 100%;
+}
+
+/* History */
+.section-history {
+    background-image: url(../images/bkg-history.png), url(../images/hoa-tiet-goc-trai-tren.png), url(../images/hoa-tiet-goc-phai-duoi.png), url(../images/hoa-tiet-chuoi.png), url(../images/hoa-tiet-chuoi.png);
+    background-position: center, top left, right 10px bottom -30px, left center, right center;
+    background-repeat: no-repeat;
+    padding: 30px 50px;
+    margin: 0 auto;
+}
+
+.section-history .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+table {
+    margin: 0 auto;
+}
+
+table tr td:nth-child(1) {
+    text-align: right;
+    width: 50%;
+    border-right: 20px solid #D9D9D9;
+    padding-right: 15px;
+}
+
+table tr td:nth-child(2) {
+    text-align: left;
+    width: 50%;
+    padding-left: 15px;
+}
+
+table tr td .year {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+table tr td .sub-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+table tr td .table-text {
+    line-height: 1.8;
+}
+
+table tr td .img-col-2 img{
+    border: 15px solid #fff;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+table tr:last-child{
+    text-align: center;
+    width: 100%;
+}
+
+table tr:last-child td {
+    padding-right: 0;
+    border-right: none;
+}
+
+table tr:last-child .year {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+table tr:last-child .img-col-2 {
+    text-align: center;
+}
+
+table tr:last-child .table-text{
+    text-align: center;
+    padding: 0 20%;
+}
+
+/* Map 2D */
+
+.section-map-2D {
+    margin: 30px 100px;
+    text-align: center;
+}
+
+.section-map-2D .img-hoa-tiet-nho {
+    height: 18px;
+    width: 40px;
+}
+
+.section-map-2D .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-map-2D .title .line {
+    border-bottom: 1px solid #DCBA82;
+    width: 10%;
+}
+
+.section-map-2D .title h2 {
+    color: #5B432E;
+    margin: 0 20px;
+    font-size: 24px;
+    font-family: "Roboto Slab", serif;
+}
+
+.section-map-2D img {
+    width: 100%;
+}
+
+.section-map-2D p {
+    font-style: italic;
+}
+
+/* Slider banner */
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    vertical-align: middle;
+    height: 500px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    height: 100%;
+    /* max-width: 1000px; */
+    position: relative;
+    margin: auto;
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #5B432E;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.container-dot {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

@@ -4,7 +4,7 @@ module.exports = {
   getAllInfo: async function (req) {
     return new Promise(async function (resolve, reject) {
       try {
-        const res = await Info.find();
+        const res = await Info.findOne();
         resolve(res);
       } catch (error) {
         reject(error);
@@ -27,12 +27,10 @@ module.exports = {
       try {
         const r = await Info.findOneAndUpdate(
           {
-            _id: req.query.id,
+            _id: "639944e9f4c01df85c87dcea",
           },
           {
-            title: data.title,
-            summary: data.summary,
-            desc: data.desc,
+            [data.keyword]: data.data,
           }
         );
         resolve({

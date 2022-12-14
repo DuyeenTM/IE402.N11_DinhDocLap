@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/visit.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <title>Tham quan</title>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  </head>
+  <body>
+    <div id="visit-container">
+      <!-- Header -->
+      <header class="container-header">
+        <div class="header-logo">
+          <img src="../images/Logo-1.png" alt="logo" />
+        </div>
+        <nav class="header-nav">
+          <ul>
+            <li>
+              <a
+                href="./home.html"
+                class="header-nav-link"
+                onclick="activeNavLinkHeader(this)"
+                >Trang chủ</a
+              >
+            </li>
+            <li>
+              <a
+                class="header-nav-link header-active"
+                onclick="activeNavLinkHeader(this)"
+                href="./visit.html"
+                >Tham quan</a
+              >
+            </li>
+            <li>
+              <a
+                class="header-nav-lin"
+                onclick="activeNavLinkHeader(this)"
+                href="./render.html"
+                >Bản đồ 3D</a
+              >
+            </li>
+            <li>
+              <a
+                class="header-nav-link"
+                onclick="activeNavLinkHeader(this)"
+                href="#lienhe"
+                >Liên hệ</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div id="avarta" class="avarta">
+          <img
+            src="https://i1.sndcdn.com/artworks-CjUt4ngpBVu5RJIL-nn0uQA-t500x500.jpg"
+            alt="avarta"
+          />
+          <img
+            title="LogOut"
+            id="logOut"
+            src="https://drive.google.com/uc?id=1s6PZ32Sxdw3i09soXxEqwkYM7LrGQgTn"
+            alt="logout"
+          />
+        </div>
+
+        <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
+      </header>
+
+      <div class="notification-container">
+        <div class="notification-img-container">
+          <img
+            src="https://drive.google.com/uc?id=1UjdrccuXnvD6-1sRR0wkYsyTXlILK8DV"
+            alt=""
+          />
+        </div>
+        <div class="notification-text-container">
+          <h4>THÔNG BÁO:</h4>
+          <marquee direction="left" height="45" width="100%" bgcolor="white">
+            <p>
+              Ban quản lý Dinh Độc Lập thông báo khuyến mãi vé vào cổng cho các
+              đoàn học sinh/sinh viên tham quan khu di tích lịch sử từ ngày
+              06/12/2022 đến Tết nguyên đán
+            </p>
+          </marquee>
+        </div>
+      </div>
+
+      <div class="visit-title">
+        <div class="title-banner">
+          <h3 class="title-text">Hướng dẫn tham quan Dinh Độc Lập</h3>
+        </div>
+      </div>
+
+      <div class="guide-container">
+        <table>
+          <tr>
+            <td>
+              <div class="col-left">
+                <div class="col-left-container-title">
+                  <img
+                    src="https://drive.google.com/uc?id=1Ix9Tc4rllb3ui7tGHrmSpoE4Gny99Pa-"
+                    alt="Clock"
+                    class="col-left-img"
+                  />
+                  <span class="col-left-title">Giờ mở cửa</span>
+                </div>
+                <ul>
+                  Dinh Độc Lập mở cửa bán vé phục vụ du khách tham quan tất cả
+                  các ngày trong tuần
+                  <li>
+                    Sáng: từ <strong>7h30</strong> đến <strong>11h30.</strong>
+                  </li>
+                  <li>
+                    Chiều: từ <strong>13h00</strong> đến <strong>17h00.</strong>
+                  </li>
+                </ul>
+                <p class="clo-left-note">
+                  <span>Lưu ý:</span> Quầy vé sẽ đóng cửa vào
+                  <strong>11h00</strong> và <strong>16h00</strong> hàng ngày.
+                </p>
+              </div>
+            </td>
+
+            <td>
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                class="col-right img-modify-col1"
+              >
+                <img
+                  src="https://drive.google.com/uc?id=1swec0N0j62ceCarAMLP8oi9X8Dxudi3s"
+                  alt="Clock"
+                  class="col-right-img"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div
+                data-aos-duration="1000"
+                data-aos="fade-right"
+                class="img-col-left"
+              >
+                <img
+                  src="https://drive.google.com/uc?id=1jfHclazUy9s_nc4mnXKja1Jpg-N_5njD"
+                  alt="Clock"
+                  class="col-right-img"
+                />
+              </div>
+            </td>
+            <td>
+              <div class="col-left col-modify">
+                <div class="col-left-container-title">
+                  <span class="col-left-title">Phương tiện di chuyển</span>
+                </div>
+                <div class="sub-row">
+                  <img
+                    src="https://drive.google.com/uc?id=1Gmr5Gkjr5Tb8bWpyUxVe1ytY8DMHc2fv"
+                    alt=""
+                  />
+                  <p class="sub-row-text">
+                    <strong>Taxi:</strong> Chỉ cần xuống sảnh khách sạn, bắt
+                    taxi, bạn đã có thể tới Dinh trong giây lát.
+                  </p>
+                </div>
+                <div class="sub-row">
+                  <img
+                    src="https://drive.google.com/uc?id=1U2cEGQUglYPY_TZkWUJ4vZ16kaL2AeXa"
+                    alt=""
+                  />
+                  <p class="sub-row-text">
+                    <strong>Ô tô:</strong> Nếu di chuyển bằng ô tô, bạn sẽ gửi
+                    xe ở công viên Tao Đàn hoặc trên đường Huyền Trân Công Chúa
+                    ngay bên cạnh Dinh.
+                  </p>
+                </div>
+                <div class="sub-row">
+                  <img
+                    src="https://drive.google.com/uc?id=1MNqrkInaBV5T9mLDE27CFSRdxO3oj6-V"
+                    alt=""
+                  />
+                  <p class="sub-row-text">
+                    <strong>Bus:</strong> bạn có thể chọn 1 trong các tuyến bus
+                    như: 001 (bến xe Bến Thành – bến xe Chợ Lớn), 002 (bến xe
+                    Bến Thành – bến xe miền Tây), 003 (bến xe Bến Thành – Thạnh
+                    Lộc), 004 (bến xe Bến Thành – Cộng Hòa – bến xe An Sương),
+                    005 (bến xe Bến Thành – Biên Hòa).
+                  </p>
+                </div>
+                <div class="sub-row">
+                  <img
+                    src="https://drive.google.com/uc?id=1GlRhKjxXTv0Zz4T1Wgjbo6rJG9exbA6i"
+                    alt=""
+                  />
+                  <p class="sub-row-text">
+                    <strong>Xe máy:</strong> Đây là phương tiện di chuyển phổ
+                    biến của người dân địa phương hoặc các tỉnh thành lân cận
+                    khi đến Dinh. Tuy nhiên, đường xá tại thành phố Hồ Chí Minh
+                    đông như mắc cửu, nếu không rành đường, du khách sẽ mất rất
+                    nhiều thời gian.
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="col-left">
+                <div class="col-left-container-title">
+                  <img
+                    src="https://drive.google.com/uc?id=1bkFdIf61860p3nyzThChrtqYfc_JGKuU"
+                    alt=""
+                    class="col-left-img"
+                  />
+                  <span class="col-left-title">Những lưu ý khi tham quan</span>
+                </div>
+                <ul>
+                  Do là nơi mang dấu ấn lịch sử nên khi tham quan, du khách cần
+                  tuân thủ đúng nội quy của khu di tích.
+                  <li>Mặc trang phục lịch sự.</li>
+                  <li>
+                    Tuân thủ theo hướng dẫn tại các biển báo và của bảo vệ trong
+                    suốt quá trình tham quan.
+                  </li>
+                  <li>Không tự ý mang hành lý vào bên trong di tích.</li>
+                  <li>Không được mang đồ ăn thức uống vào khu di tích.</li>
+                  <li>Không đưa các loại động vật đi cùng.</li>
+                  <li>
+                    Không được đem theo các loại vũ khí, chất độc hại, chất cháy
+                    nổ.
+                  </li>
+                  <li>
+                    Khách tham quan sẽ chịu toàn bộ trách nhiệm nếu gây ra bất
+                    cứ tổn thất nào cho Dinh Độc Lập.
+                  </li>
+                </ul>
+              </div>
+            </td>
+
+            <td>
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                class="col-right"
+              >
+                <img
+                  src="https://drive.google.com/uc?id=1T2HD4Z5JciPAu0JNm56jVOvDlad0_Wfp"
+                  alt="Clock"
+                  class="col-right-img"
+                />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ticket-price-container">
+        <h2 class="ticket-price-title">Giá vé vào cổng</h2>
+        <div class="ticket-tab-container">
+          <div class="heritage-container tab-container">
+            <h3 class="ticket-title ticket-title-left">Vé tham quan di tích</h3>
+            <p class="ticket-line1">Người lớn: 40.000 đồng/người.</p>
+            <p class="ticket-line2">Sinh viên: 20.000 đồng/người.</p>
+            <p class="ticket-line3">Trẻ em: 10.000 đồng/người.</p>
+          </div>
+          <div class="combo-container tab-container">
+            <h3 class="ticket-title ticket-title-center">
+              Combo vé tham quan di tích và khu trưng bày
+            </h3>
+            <p class="ticket-line1">Người lớn: 65.000 đồng/người.</p>
+            <p class="ticket-line2">Sinh viên: 45.000 đồng/người.</p>
+            <p class="ticket-line3">Trẻ em: 15.000 đồng/người.</p>
+          </div>
+          <div class="showroom-container tab-container">
+            <h3 class="ticket-title ticket-title-right">
+              Vé tham quan khu trưng bày
+            </h3>
+            <p class="ticket-line1">Người lớn: 40.000 đồng/người.</p>
+            <p class="ticket-line2">Sinh viên: 40.000 đồng/người.</p>
+            <p class="ticket-line3">Trẻ em: 10.000 đồng/người.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div class="map-left">
+          <div class="visit-map" data-aos="fade-up-right">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4354175972535!2d106.69409501425642!3d10.777925262114517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f385570472f%3A0x1787491df0ed8d6a!2zRGluaCDEkOG7mWMgTOG6rXA!5e0!3m2!1svi!2s!4v1670925619256!5m2!1svi!2s"
+              width="500"
+              height="250"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div class="map-right">
+          <div class="map-content" data-aos="fade-up-left">
+            Dinh Độc Lập hay còn gọi là Dinh Thống Nhất, nằm ngay trung tâm của
+            TP.Hồ Chí Minh, ở số 135 Nam Kỳ Khởi Nghĩa, phương Bến Nghé, Quận 1.
+            Địa chỉ này cũng gần những điểm du lịch hấp dẫn khác như nhà thờ Đức
+            Bà, công viên 30/4, Bưu điện Trung tâm Thành phố
+          </div>
+        </div>
+      </div>
+
+      <div class="video-container">
+        <!-- <video
+          controls
+          autoplay
+          src="https://rr3---sn-npoeener.c.drive.google.com/videoplayback?expire=1670945168&ei=UGGYY63eDIbiuQKxtb_YCQ&ip=113.161.69.43&cp=QVRMUkpfVFFUSVhPOk1lTFlHaFl1TjR4TUNrSzd2UkItbHpuSHdIaXlSbHdfSXB3Ml9CbFYyWjI&id=b41f195c9dcf6cf2&itag=22&source=webdrive&requiressl=yes&mh=n2&mm=32&mn=sn-npoeener&ms=su&mv=m&mvi=3&pl=24&sc=yes&ttl=transient&susc=dr&driveid=1RXyEIJIJ1SHrUvyVIwUAk8EHQFUH90VC&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=241.023&lmt=1670928281651543&mt=1670930461&subapp=DRIVE_WEB_FILE_VIEWER&txp=0011224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRQIhAJIkW85jymX9qkPBgJnL6Qb60oU3eqSxxlFmn3zdUjkfAiAjnISfQ_v9wFCGkcAcsQSAPvu6CVYQ2NqoAWgFEKCUfg==&lsparams=mh,mm,mn,ms,mv,mvi,pl,sc&lsig=AG3C_xAwRAIgPsCnrxLlUugieRTMjioBx0cNCxhRmdt0JRo1opIHSywCIDmfBCZ632DpG9Tvu-vvRYYFHswQTbVtkxFPyYnVLcx_&cpn=WqjakcTARQHVRD6m&c=WEB_EMBEDDED_PLAYER&cver=1.20221211.00.00"
+        ></video> -->
+        <iframe
+          src="https://drive.google.com/file/d/1RXyEIJIJ1SHrUvyVIwUAk8EHQFUH90VC/preview"
+          width="700"
+          height="450"
+          allow="autoplay"
+        ></iframe>
+        <div class="video-description-container">
+          <div class="video-description">
+            Dinh Độc Lập được thiết kế dựa theo phong thủy cũng như kiến trúc
+            phương Đông nhưng vẫn mang nét hiện đại. Đến Dinh Độc Lập du khách
+            sẽ được tự do tìm hiểu qua các hệ thống pano, bảng chỉ dẫn…theo tiêu
+            chuẩn quốc tế. Nếu cần thuyết minh viên, bạn có thể thuê theo đoàn.
+            Sau khi tham quan Dinh, bạn sẽ được xem bộ phim tư liệu “Dinh Độc
+            Lập – chứng nhân lịch sử” dài 25 phút trong phòng chiếu phim.
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="container-footer">
+        <div class="content-footer">
+          <a href="./home.html" class="footer-logo">
+            <img src="../images/Logo-1.png" alt="logo" />
+          </a>
+          <nav class="footer-nav">
+            <h2>Liên kết</h2>
+            <ul>
+              <li><a href="./home.html">Trang chủ</a></li>
+              <li><a href="./visit">Tham quan</a></li>
+              <li><a href="./render.html">Bản đồ 3D</a></li>
+              <li><a href="#lienhe">Liên hệ</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-nav">
+            <h2>Thông tin liên hệ</h2>
+            <ul>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>Điện thoại: 028.38223652</span>
+              </li>
+              <li>
+                <i class="fa fa-fax" aria-hidden="true"></i>
+                <span>Fax: 080.85008</span>
+              </li>
+              <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span
+                  >135 Nam Kỳ Khởi Nghĩa, <br />
+                  Quận 1, TP.HCM</span
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="footer-nav">
+            <h2>Theo dõi chúng tôi</h2>
+            <div class="socials">
+              <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </div>
+          </nav>
+        </div>
+        <div class="bottom">
+          <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
+        </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+      <script>
+        AOS.init({
+          // Global settings:
+          disable: false,
+          startEvent: "DOMContentLoaded",
+          initClassName: "aos-init",
+          animatedClassName: "aos-animate",
+          useClassNames: false,
+          disableMutationObserver: false,
+          debounceDelay: 50,
+          throttleDelay: 99,
+
+          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+          offset: 120,
+          delay: 0,
+          duration: 700,
+          easing: "ease",
+          once: false,
+          mirror: false,
+          anchorPlacement: "top-bottom",
+        });
+        //header
+        var notyf = new Notyf({
+          duration: 2000,
+          position: {
+            x: "right",
+            y: "bottom",
+          },
+          dismissible: true,
+        });
+        const avatar = document.getElementById("avarta");
+        const btnLogIn = document.getElementById("btnLogIn");
+        const logOut = document.getElementById("logOut");
+        logOut.addEventListener("click", function () {
+          localStorage.removeItem("token");
+          notyf.success("Bạn đã đăng xuất thành công!!");
+          setTimeout(() => {
+            window.location = "./home.html";
+          }, 1000);
+        });
+
+        const token = JSON.parse(localStorage.getItem("token"));
+        if (token) {
+          avatar.style.display = "block";
+          btnLogIn.style.display = "none";
+        } else {
+          avatar.style.display = "none";
+          btnLogIn.style.display = "block";
+        }
+      </script>
+    </div>
+  </body>
+</html>

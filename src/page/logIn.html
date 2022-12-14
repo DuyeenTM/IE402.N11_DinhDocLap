@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link rel="stylesheet" href="../styles/logIn.css" />
+    <title>Đăng nhập</title>
+  </head>
+
+  <body>
+    <div class="logIn-container">
+      <div class="left">
+        <div>Chào mừng đến với</div>
+        <h1>Dinh Độc Lập</h1>
+        <!-- <div class="image">
+                <img src="https://drive.google.com/uc?id=1Pxz-UfLBEteOvcmbQNYDC7C4hb9J60ev" alt="">
+            </div> -->
+      </div>
+      <div class="right">
+        <div class="logo">
+          <img
+            src="https://drive.google.com/uc?id=1Q3fR8_NX__7aptEO8C-yBijrs18Bqo_p"
+            alt=""
+          />
+        </div>
+        <form class="modal-content animate" method="post">
+          <div class="container">
+            <div class="icon">
+              <a href="./home.html"><i class="fa-solid fa-house-user"></i></a>
+            </div>
+            <h2>Đăng nhập</h2>
+            <label for="uname"
+              ><b>Tên đăng nhập <span>*</span> </b></label
+            >
+            <input
+              id="userName"
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              autofocus
+              required
+            />
+            <label for="psw"
+              ><b>Mật khẩu <span>*</span></b></label
+            >
+            <div class="form-group password">
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                name="psw"
+                required
+              />
+
+              <i id="togglePassword" class="fas fa-eye-slash"></i>
+            </div>
+
+            <div class="btn-logIn">
+              <button class="loginBtn" type="submit">Đăng nhập</button>
+            </div>
+            <div class="forgot-password">
+              <a href="#">Quên mật khẩu?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    <script>
+      var notyf = new Notyf({
+        duration: 2000,
+        position: {
+          x: "right",
+          y: "bottom",
+        },
+        dismissible: true,
+      });
+
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+
+      togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("fa-eye");
+      });
+
+      // prevent form submit
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const login = "http://localhost:3000/api/v1/auth/login";
+
+        fetch(login, {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: userName.value,
+            password: password.value,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.errorCode == 200) {
+              localStorage.setItem("token", JSON.stringify(data.token));
+              notyf.success("Bạn đã đăng nhập thành công");
+              setTimeout(() => {
+                window.location.href = "./home.html";
+              }, 2000);
+            } else {
+              notyf.error("Tài khoản của bạn không hợp lệ");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>

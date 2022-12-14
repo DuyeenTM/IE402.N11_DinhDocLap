@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Trang chủ</title>
+  </head>
+
+  <body>
+    <!-- <audio autoplay>
+      <source src="horse.ogg" type="audio/ogg" />
+    </audio> -->
+    <audio
+      autoplay
+      preload="auto"
+      type="audio/ogg"
+      src="https://mp3-s1-m-zmp3.zmdcdn.me/067492769b32726c2b23/7919704465825464730?authen=exp=1670946778~acl=/067492769b32726c2b23/*~hmac=ad1cde930d9737cb4aae1b0d8f4dfd33"
+    ></audio>
+    <!-- Header -->
+    <header class="container-header">
+      <div class="header-logo">
+        <img src="../images/Logo-1.png" alt="logo" />
+      </div>
+      <nav class="header-nav">
+        <ul>
+          <li>
+            <a
+              href="./home.html"
+              class="header-nav-link header-active"
+              onclick="activeNavLinkHeader(this)"
+              >Trang chủ</a
+            >
+          </li>
+          <li>
+            <a
+              class="header-nav-link"
+              onclick="activeNavLinkHeader(this)"
+              href="./visit.html"
+              >Tham quan</a
+            >
+          </li>
+          <li>
+            <a
+              class="header-nav-link"
+              onclick="activeNavLinkHeader(this)"
+              href="./render.html"
+              >Bản đồ 3D</a
+            >
+          </li>
+          <li>
+            <a
+              class="header-nav-link"
+              onclick="activeNavLinkHeader(this)"
+              href="#lienhe"
+              >Liên hệ</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div id="avarta" class="avarta">
+        <img
+          src="https://i1.sndcdn.com/artworks-CjUt4ngpBVu5RJIL-nn0uQA-t500x500.jpg"
+          alt="avarta"
+        />
+        <img
+          title="Đăng xuất"
+          id="logOut"
+          src="https://drive.google.com/uc?id=1s6PZ32Sxdw3i09soXxEqwkYM7LrGQgTn"
+          alt="logout"
+        />
+      </div>
+
+      <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
+    </header>
+
+    <!-- Home -->
+    <div class="notify">
+      <img
+        src="https://drive.google.com/uc?id=1UjdrccuXnvD6-1sRR0wkYsyTXlILK8DV"
+        alt="thong-bao"
+      />
+      <span>THÔNG BÁO: </span>
+      <marquee
+        direction="left"
+        onmouseover="this.stop()"
+        onmouseout="this.start()"
+        >Ban quản lý Dinh Độc Lập thông báo khuyến mãi 30% vé vào cổng cho các
+        đoàn học sinh/sinh viên tham quan khu di tích lịch sử từ ngày 06/12/2022
+        đến hết Giáng Sinh</marquee
+      >
+    </div>
+
+    <div class="section-slider">
+      <div class="auto-slider">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="../images/img-banner.png" style="width: 100%" />
+            <!-- <div class="text">Caption Text</div> -->
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="../images/img-banner-2.jpg" style="width: 100%" />
+            <!-- <div class="text">Caption Two</div> -->
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="../images/img-banner-3.jpg" style="width: 100%" />
+            <!-- <div class="text">Caption Three</div> -->
+          </div>
+          <div class="container-dot" style="text-align: center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+      <div class="background"></div>
+      <div class="section-notify">
+        <div class="title">
+          <span>Di tích lịch sử</span>
+          <h3>DINH ĐỘC LẬP</h3>
+        </div>
+        <div class="btn-switch">
+          <a href="./visit.html" class="btn-default btn-tham-quan">Tham quan</a>
+          <a href="#section-history" class="btn-default btn-tin-hieu"
+            >Tìm hiểu</a
+          >
+        </div>
+      </div>
+      <div class="notify-ticket">
+        <span class="title-time">Giờ bán vé</span> <br />
+        <span class="title-time-item">8: 00 - 15: 30</span> <br />
+        <span class="title-time">Giờ tham quan</span> <br />
+        <span class="title-time-item">8: 00 - 15: 30</span> <br />
+      </div>
+    </div>
+
+    <div class="section-introduction">
+      <div class="title">
+        <div class="line"></div>
+        <h2>Giới thiệu</h2>
+        <div class="line"></div>
+      </div>
+      <p>
+        <span>Hội trường Thống Nhất</span> là tên của cơ quan (tổ chức) quản lý
+        Dinh Độc Lập ngày nay, được thành lập theo Quyết định số 709/QĐ-VPCP
+        ngày 14 tháng 6 năm 2013 của Bộ trưởng chủ nhiệm Văn phòng Chính phủ
+        nước Cộng Hòa Xã Hội Chủ nghĩa Việt Nam.
+      </p>
+      <img src="../images/img-intro.png" alt="img-intro" />
+    </div>
+
+    <div class="section-history" id="section-history">
+      <h2 class="title">Lịch sử hình thành</h2>
+      <table>
+        <tr>
+          <td>
+            <div class="year">1858</div>
+            <h3 class="sub-title">Dinh Norodom thời Pháp thuộc</h3>
+            <p class="table-text">
+              Năm 1858, Pháp nổ súng tấn công Đà Nẵng mở đầu cuộc chiến tranh
+              xâm chiếm Việt Nam. Ngày 23 tháng 2 năm 1868, Thống đốc Nam Kỳ
+              Lagrandière đã làm lễ đặt viên đá đầu tiên khởi công xây dựng Dinh
+              Thống đốc Nam Kỳ mới tại Sài Gòn thay cho dinh cũ được dựng bằng
+              gỗ vào năm 1863.
+            </p>
+          </td>
+          <td>
+            <div class="img-col-2" data-aos="flip-up">
+              <img src="../images/img-1858.png" alt="img-1858" />
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="img-col-2" data-aos="flip-up">
+              <img src="../images/img-1954.png" alt="img-1954" />
+            </div>
+          </td>
+          <td>
+            <div class="year">1954</div>
+            <h3 class="sub-title">Dinh Độc Lập thời Việt Nam Cộng hòa</h3>
+            <p class="table-text">
+              Ngày 7 tháng 9 năm 1954 Dinh Norodom được bàn giao giữa đại diện
+              Pháp, tướng 5 sao Paul Ély, và đại diện Quốc gia Việt Nam, Thủ
+              tướng Ngô Đình Diệm.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="year">1962</div>
+            <p class="table-text">
+              Phe đảo chính đã cử 2 viên phi công thuộc Quân lực Việt Nam Cộng
+              hòa là Nguyễn Văn Cử và Phạm Phú Quốc lái 2 máy bay AD-6 ném bom
+              làm sập toàn bộ phần chính cánh trái của dinh. Do không thể khôi
+              phục lại, ông Ngô Đình Diệm đã cho san bằng và xây một dinh thự
+              mới ngay trên nền đất cũ.
+            </p>
+          </td>
+          <td>
+            <div class="img-col-2" data-aos="flip-down">
+              <img src="../images/img-1962.png" alt="img-1962" />
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="year">1975</div>
+            <div class="img-col-2" data-aos="flip-down">
+              <img src="../images/img-1975.png" alt="img-1975" />
+            </div>
+
+            <p class="table-text">
+              Vào tháng 11 năm 1975 Hội nghị hiệp thương chính trị thống nhất
+              hai miền Nam Bắc thống nhất diễn ra tại dinh Độc Lập. Năm 2009 Thủ
+              tướng Chính phủ đã ký Quyết định số 1272/QĐ-TTg xếp hạng Di tích
+              lịch sử Dinh Độc Lập là một trong 10 di tích quốc gia đặc biệt đầu
+              tiên của Việt Nam.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section-map-2D">
+      <img
+        class="img-hoa-tiet-nho"
+        src="../images/hoa-tiet-2-hinh-thoi.png"
+        alt="hoa-tiet-2-hinh-thoi.png"
+      />
+      <div class="title">
+        <div class="line"></div>
+        <h2>Bản đồ 2D</h2>
+        <div class="line"></div>
+      </div>
+      <img src="../images/img-so-do-2D.png" alt="so-do-2D" data-aos="zoom-in" />
+      <p>Nguồn: https://dinhdoclap.gov.vn/ban-do-di-tich/</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-footer">
+      <div class="content-footer">
+        <a href="./home.html" class="footer-logo">
+          <img src="../images/Logo-1.png" alt="logo" />
+        </a>
+        <nav class="footer-nav">
+          <h2>Liên kết</h2>
+          <ul>
+            <li><a href="./home.html">Trang chủ</a></li>
+            <li><a href="../html/visit.html">Tham quan</a></li>
+            <li><a href="../html/render.html">Bản đồ 3D</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h2>Thông tin liên hệ</h2>
+          <ul>
+            <li>
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>Điện thoại: 028.38223652</span>
+            </li>
+            <li>
+              <i class="fa fa-fax" aria-hidden="true"></i>
+              <span>Fax: 080.85008</span>
+            </li>
+            <li>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span
+                >135 Nam Kỳ Khởi Nghĩa, <br />
+                quận 1, TP.HCM</span
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-nav">
+          <h2>Theo dõi chúng tôi</h2>
+          <div class="socials">
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </nav>
+      </div>
+      <div class="bottom">
+        <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script>
+      AOS.init({
+        // Global settings:
+        disable: false,
+        startEvent: "DOMContentLoaded",
+        initClassName: "aos-init",
+        animatedClassName: "aos-animate",
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120,
+        delay: 0,
+        duration: 700,
+        easing: "ease",
+        once: false,
+        mirror: false,
+        anchorPlacement: "top-bottom",
+      });
+      var notyf = new Notyf({
+        duration: 2000,
+        position: {
+          x: "right",
+          y: "bottom",
+        },
+        dismissible: true,
+      });
+      const avatar = document.getElementById("avarta");
+      const btnLogIn = document.getElementById("btnLogIn");
+      const logOut = document.getElementById("logOut");
+      logOut.addEventListener("click", function () {
+        localStorage.removeItem("token");
+        notyf.success("Bạn đã đăng xuất thành công!!");
+        setTimeout(() => {
+          avatar.style.display = "none";
+          btnLogIn.style.display = "block";
+        }, 1000);
+      });
+
+      function parseJwt(token) {
+        var base64Url = token.split(".")[1];
+        var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+        var jsonPayload = decodeURIComponent(
+          window
+            .atob(base64)
+            .split("")
+            .map(function (c) {
+              return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join("")
+        );
+
+        return JSON.parse(jsonPayload);
+      }
+      const token = JSON.parse(localStorage.getItem("token"));
+      if (token) {
+        avatar.style.display = "block";
+        btnLogIn.style.display = "none";
+      } else {
+        avatar.style.display = "none";
+        btnLogIn.style.display = "block";
+      }
+      // Header
+      // const headerNavLink = document.querySelectorAll(".header-nav-link");
+
+      // function activeNavLinkHeader(element) {
+      //   for (i = 0; i < headerNavLink.length; i++) {
+      //     headerNavLink[i].classList.remove("header-active");
+      //   }
+      //   element.classList.add("header-active");
+      // }
+
+      //Sldier banner
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+    </script>
+  </body>
+</html>
