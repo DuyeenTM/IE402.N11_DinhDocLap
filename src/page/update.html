@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../styles/update.css" />
+    <link rel="stylesheet" href="../styles/loader.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://widget.cloudinary.com/v2.0/global/all.js"
+      type="text/javascript"
+    ></script>
+    <title>Quản lý thông tin</title>
+    <script>
+      function handleCheck() {
+        const token = JSON.parse(localStorage.getItem("token"));
+        if (!token) {
+          // document.querySelector("#updateContainer").remove();
+          window.stop();
+        }
+      }
+      handleCheck();
+    </script>
+  </head>
+
+  <body>
+    <div id="updateContainer">
+      <!-- Loader -->
+      <div class="loader-bg" style="display: none">
+        <div class="loader">Loading...</div>
+      </div>
+      <!-- Header -->
+      <header class="container-header">
+        <div class="header-logo">
+          <img src="../images/Logo-1.png" alt="logo" />
+        </div>
+        <nav class="header-nav">
+          <ul>
+            <li>
+              <a
+                href="./home.html"
+                class="header-nav-link"
+                onclick="activeNavLinkHeader(this)"
+                >Trang chủ</a
+              >
+            </li>
+            <li>
+              <a
+                class="header-nav-link"
+                onclick="activeNavLinkHeader(this)"
+                href="./visit.html"
+                >Tham quan</a
+              >
+            </li>
+            <li>
+              <a
+                class="header-nav-link header-active"
+                onclick="activeNavLinkHeader(this)"
+                href="./render.html"
+                >Bản đồ 3D</a
+              >
+            </li>
+            <li>
+              <a
+                class="header-nav-link"
+                onclick="activeNavLinkHeader(this)"
+                href="#lienhe"
+                >Liên hệ</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div id="avarta" class="avarta">
+          <img
+            src="https://i1.sndcdn.com/artworks-CjUt4ngpBVu5RJIL-nn0uQA-t500x500.jpg"
+            alt="avarta"
+          />
+          <img
+            title="Đăng xuất"
+            id="logOut"
+            src="https://drive.google.com/uc?id=1s6PZ32Sxdw3i09soXxEqwkYM7LrGQgTn"
+            alt="logout"
+          />
+        </div>
+
+        <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
+      </header>
+
+      <div class="information-management-update-container">
+        <div class="notification-container">
+          <div class="notification-img-container">
+            <img
+              id="notificationImg"
+              src="https://drive.google.com/uc?id=1UjdrccuXnvD6-1sRR0wkYsyTXlILK8DV"
+              alt=""
+            />
+          </div>
+          <div class="notification-text-container">
+            <h4>THÔNG BÁO:</h4>
+            <marquee direction="left" height="45" width="100%" bgcolor="white">
+              <p>
+                Ban quản lý Dinh Độc Lập thông báo khuyến mãi vé vào cổng cho
+                các đoàn học sinh/sinh viên tham quan khu di tích lịch sử từ
+                ngày 06/12/2022 đến Tết nguyên đán
+              </p>
+            </marquee>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="information-management-title">Quản lý thông tin</h2>
+        </div>
+
+        <div class="information-tabs-container">
+          <div class="overview-tab-item tab-item tab-item-active">
+            <i class="tab-icon fa-solid fa-place-of-worship"></i>
+            Tổng quan Dinh Độc Lập
+          </div>
+          <!-- <div class="divider"></div> -->
+          <div class="architecture-tab-item tab-item">
+            <i class="tab-icon fa-solid fa-cubes"></i>
+            Thông tin kiến trúc
+          </div>
+          <!-- <div class="divider"></div> -->
+          <div class="floor-tab-item tab-item">
+            <i class="tab-icon fa-solid fa-layer-group"></i>
+            Thông tin các tầng
+          </div>
+          <!-- <div class="divider"></div> -->
+          <div class="site-tab-item tab-item">
+            <i class="tab-icon fa-solid fa-location-dot"></i>
+            Địa điểm tham quan
+          </div>
+          <div class="line"></div>
+        </div>
+
+        <div
+          class="overview-edit-container tab-pane tab-pane-active"
+          title="Nhấp đôi vào nội dung để chỉnh sửa thông tin"
+        >
+          <div class="edit-header">
+            <h3 class="header-title">Giới thiệu về Dinh Độc Lập</h3>
+            <!-- <button id="overview-edit-btn edit-btn">Chỉnh sửa</button> -->
+            <button
+              class="overview-edit-done-btn edit-btn"
+              onclick="handleConfirmOver()"
+            >
+              Hoàn thành
+            </button>
+          </div>
+
+          <form action="" id="overview-form" class="infor-form">
+            <div id="overviewText"></div>
+            <img id="overviewImg" alt="Giới thiệu về Dinh Độc Lập" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file1"
+              onchange="loadFile(event, 'overviewImg')"
+              style="display: none"
+            />
+            <label for="file1">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+          </form>
+        </div>
+
+        <div
+          class="architecture-edit-container tab-pane"
+          title="Nhấp đôi vào nội dung để chỉnh sửa thông tin"
+        >
+          <div class="edit-header">
+            <h3 class="header-title">Thông tin về kiến trúc Dinh Độc Lập</h3>
+            <!-- <button id="architecture-edit-btn edit-btn">Chỉnh sửa</button> -->
+            <button
+              class="architecture-edit-done-btn edit-btn"
+              onclick="handleConfirmArchi()"
+            >
+              Hoàn thành
+            </button>
+          </div>
+
+          <form action="" id="architecture-form" class="infor-form">
+            <div id="architectureText"></div>
+            <img
+              id="architectureImg"
+              alt="Thông tin về kiến trúc Dinh Độc Lập"
+            />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file2"
+              onchange="loadFile(event, 'architectureImg')"
+              style="display: none"
+            />
+            <label for="file2">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+          </form>
+        </div>
+
+        <div
+          class="floor-edit-container tab-pane"
+          title="Nhấp đôi vào nội dung để chỉnh sửa thông tin"
+        >
+          <div class="edit-header">
+            <h3 class="header-title">Thông tin về các tầng Dinh Độc Lập</h3>
+            <!-- <button id="floor-edit-btn edit-btn">Chỉnh sửa</button> -->
+            <button
+              class="floor-edit-done-btn edit-btn"
+              onclick="handleConfirmFloor()"
+            >
+              Hoàn thành
+            </button>
+          </div>
+
+          <form action="" id="floor-form" class="infor-form">
+            <div id="floorText"></div>
+            <img id="floorImg" alt="Thông tin về các tầng Dinh Độc Lập" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file3"
+              onchange="loadFile(event, 'floorImg')"
+              style="display: none"
+            />
+            <label for="file3">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+            <h4 class="subtitle" id="floor1">Tầng 1</h4>
+
+            <div class="floor1Text-1"></div>
+            <img id="floor1Img-1" alt="Phòng Khánh Tiết" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file4"
+              onchange="loadFile(event, 'floor1Img-1')"
+              style="display: none"
+            />
+            <label for="file4">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+
+            <div class="floor1Text-2"></div>
+            <img id="floor1Img-2" alt="Phòng Nội Các" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file5"
+              onchange="loadFile(event, 'floor1Img-2')"
+              style="display: none"
+            />
+            <label for="file5">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+
+            <div class="floor1Text-3"></div>
+            <img id="floor1Img-3" alt="Phòng Đại Yến" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file6"
+              onchange="loadFile(event, 'floor1Img-3')"
+              style="display: none"
+            />
+            <label for="file6">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+
+            <h4 class="subtitle" id="floor2">Tầng 2</h4>
+            <div class="floor2Text-1"></div>
+            <img id="floor2Img-1" alt="Phòng làm việc của Tổng Thống" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file7"
+              onchange="loadFile(event, 'floor2Img-1')"
+              style="display: none"
+            />
+            <label for="file7">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+
+            <div class="floor2Text-2"></div>
+            <img id="floor2Img-2" alt="Phòng tiếp khách nước ngoài" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file8"
+              onchange="loadFile(event, 'floor2Img-2')"
+              style="display: none"
+            />
+            <label for="file8">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+
+            <h4 class="subtitle" id="floor3">Tầng 3</h4>
+            <div class="floor3Text"></div>
+            <img id="floor3Img" alt="Phòng Giải trí" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file9"
+              onchange="loadFile(event, 'floor3Img')"
+              style="display: none"
+            />
+            <label for="file9">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+          </form>
+        </div>
+
+        <div
+          class="site-edit-container tab-pane"
+          title="Nhấp đôi vào nội dung để chỉnh sửa thông tin"
+        >
+          <div class="edit-header">
+            <h3 class="header-title">Các địa điểm tham quan Dinh Độc Lập</h3>
+            <!-- <button id="site-edit-btn edit-btn">Chỉnh sửa</button> -->
+            <button
+              class="site-edit-done-btn edit-btn"
+              onclick="handleConfirmSite()"
+            >
+              Hoàn thành
+            </button>
+          </div>
+
+          <form action="" id="site-form" class="infor-form">
+            <h4 class="subtitle" id="site1">Khu cố định</h4>
+            <div class="site1Text"></div>
+            <ul id="site1-list">
+              <li class="site1-text1"></li>
+              <img id="site1-img1" src="" alt="" />
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                class="imgFile"
+                id="file10"
+                onchange="loadFile(event, 'site1-img1')"
+                style="display: none"
+              />
+              <label for="file10">
+                <img
+                  id="upload"
+                  src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+                />
+                <p>Change image</p>
+              </label>
+
+              <li class="site1-text2"></li>
+              <img id="site1-img2" src="" alt="" />
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                class="imgFile"
+                id="file11"
+                onchange="loadFile(event, 'site1-img2')"
+                style="display: none"
+              />
+              <label for="file11">
+                <img
+                  id="upload"
+                  src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+                />
+                <p>Change image</p>
+              </label>
+
+              <li class="site1-text3"></li>
+              <img id="site1-img3" src="" alt="" />
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                class="imgFile"
+                id="file12"
+                onchange="loadFile(event, 'site1-img3')"
+                style="display: none"
+              />
+              <label for="file12">
+                <img
+                  id="upload"
+                  src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+                />
+                <p>Change image</p>
+              </label>
+
+              <li class="site1-text4"></li>
+              <img id="site1-img4" src="" alt="" />
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                class="imgFile"
+                id="file13"
+                onchange="loadFile(event, 'site1-img4')"
+                style="display: none"
+              />
+              <label for="file13">
+                <img
+                  id="upload"
+                  src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+                />
+                <p>Change image</p>
+              </label>
+
+              <li class="site1-text5"></li>
+              <img id="site1-img5" src="" alt="" />
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                class="imgFile"
+                id="file14"
+                onchange="loadFile(event, 'site1-img5')"
+                style="display: none"
+              />
+              <label for="file14">
+                <img
+                  id="upload"
+                  src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+                />
+                <p>Change image</p>
+              </label>
+            </ul>
+
+            <h4 class="subtitle" id="site2">Khu chuyên đề</h4>
+            <div class="site2Text"></div>
+            <img id="site2Img" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file15"
+              onchange="loadFile(event, 'site2Img')"
+              style="display: none"
+            />
+            <label for="file15">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+
+            <h4 class="subtitle" id="site3">Khu bổ sung</h4>
+            <div class="site3Text"></div>
+            <img id="site3Img" />
+            <input
+              type="file"
+              accept="image/*"
+              name="image"
+              class="imgFile"
+              id="file16"
+              onchange="loadFile(event, 'site3Img')"
+              style="display: none"
+            />
+            <label for="file16">
+              <img
+                id="upload"
+                src="https://drive.google.com/uc?id=1P8QqqN1eMi4XbBFg8rDnkrgm-bdkmIsf"
+              />
+              <p>Change image</p>
+            </label>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="container-footer">
+        <div class="content-footer">
+          <a href="./home.html" class="footer-logo">
+            <img id="logo-footer" src="../images/Logo-1.png" alt="logo" />
+          </a>
+          <nav class="footer-nav">
+            <h2>Liên kết</h2>
+            <ul>
+              <li><a href="./home.html">Trang chủ</a></li>
+              <li><a href="./visit.html">Tham quan</a></li>
+              <li><a href="./render.html">Bản đồ 3D</a></li>
+              <li><a href="#lienhe">Liên hệ</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-nav">
+            <h2>Thông tin liên hệ</h2>
+            <ul>
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>Điện thoại: 028.38223652</span>
+              </li>
+              <li>
+                <i class="fa fa-fax" aria-hidden="true"></i>
+                <span>Fax: 080.85008</span>
+              </li>
+              <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span
+                  >135 Nam Kỳ Khởi Nghĩa, <br />
+                  Quận 1, TP.HCM</span
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="footer-nav">
+            <h2>Theo dõi chúng tôi</h2>
+            <div class="socials">
+              <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </div>
+          </nav>
+        </div>
+        <div class="bottom">
+          <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+      // "use strict";
+      //header
+      var notyf = new Notyf({
+        duration: 2000,
+        position: {
+          x: "right",
+          y: "bottom",
+        },
+        dismissible: true,
+      });
+      const avatar = document.getElementById("avarta");
+      const btnLogIn = document.getElementById("btnLogIn");
+      const logOut = document.getElementById("logOut");
+      logOut.addEventListener("click", function () {
+        localStorage.removeItem("token");
+        notyf.success("Bạn đã đăng xuất thành công!!");
+        setTimeout(() => {
+          window.location = "./home.html";
+        }, 1000);
+      });
+
+      const token = JSON.parse(localStorage.getItem("token"));
+      // console.log("Home", token);
+      if (token) {
+        avatar.style.display = "block";
+        btnLogIn.style.display = "none";
+      } else {
+        avatar.style.display = "none";
+        btnLogIn.style.display = "block";
+      }
+      // ==============================
+      // window.addEventListener("DOMContentLoaded", DOMContentLoaded, false);
+
+      // function DOMContentLoaded(evt) {
+      //   let allImages = Array.from(document.querySelectorAll("img"));
+      //   let numRemaining = allImages.length;
+      //   allImages.forEach((img) => (img.onload = img.onerror = onImgDone));
+      //   console.log("Hình ảnh: ", allImages);
+
+      //   function onImgDone(evt) {
+      //     numRemaining--;
+      //     console.log(
+      //       "Hình ảnh còn đang load: ",
+      //       numRemaining,
+      //       ", Hình: ",
+      //       evt
+      //     );
+      //     if (numRemaining == 2) {
+      //       var loader = document.querySelector(".loader-bg");
+      //       loader.style.display = "none";
+      //     }
+      //   }
+      // }
+
+      const $ = document.querySelector.bind(document);
+      const $$ = document.querySelectorAll.bind(document);
+
+      const tabs = $$(".tab-item");
+      const panes = $$(".tab-pane");
+
+      const tabActive = $(".tab-item-active");
+      const line = $(".information-tabs-container .line");
+
+      // requestIdleCallback(function () {
+      //   line.style.left = tabActive.offsetLeft + "px";
+      //   line.style.width = tabActive.offsetWidth + "px";
+      // });
+
+      tabs.forEach((tab, index) => {
+        const pane = panes[index];
+
+        tab.onclick = function () {
+          $(".tab-item.tab-item-active").classList.remove("tab-item-active");
+          $(".tab-pane.tab-pane-active").classList.remove("tab-pane-active");
+
+          // console.log([this]);
+          // line.style.left = Math.round(this.offsetLeft) + "px";
+          // line.style.width = Math.round(this.offsetWidth) + "px";
+          // console.log("offsetLeft: ", this.getBoundingClientRect().left + "px");
+          // console.log(
+          //   "offsetWidth: ",
+          //   this.getBoundingClientRect().right + "px"
+          // );
+
+          this.classList.add("tab-item-active");
+          pane.classList.add("tab-pane-active");
+        };
+      });
+
+      var loadFile = function (event, value) {
+        var image = document.getElementById(value);
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+
+      $$(".infor-form div").forEach(function (node) {
+        node.ondblclick = function () {
+          var val = this.innerHTML;
+          var input = document.createElement("textarea");
+          input.rows = 10;
+          input.value = val;
+          input.onblur = function () {
+            var val = this.value;
+            this.parentNode.innerHTML = val;
+          };
+          this.innerHTML = "";
+          this.appendChild(input);
+          input.focus();
+        };
+      });
+
+      $$(".infor-form li").forEach(function (node) {
+        node.ondblclick = function () {
+          var val = this.innerHTML;
+          var input = document.createElement("textarea");
+          input.rows = 3;
+          input.value = val;
+          input.onblur = function () {
+            var val = this.value;
+            this.parentNode.innerHTML = val;
+          };
+          this.innerHTML = "";
+          this.appendChild(input);
+          input.focus();
+        };
+      });
+    </script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js"></script> -->
+
+    <!-- <script src="uploadImageWithFirebase">
+    var ImgName, ImgUrl;
+    var files = [];
+    var reader = new FileReader();
+    //Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBiZSucF3mM1zbl2vMFOQgjAbcKOZ3qQ20",
+      authDomain: "annguyen-f58fe.firebaseapp.com",
+      projectId: "annguyen-f58fe",
+      storageBucket: "annguyen-f58fe.appspot.com",
+      messagingSenderId: "126737767645",
+      appId: "1:126737767645:web:704c2f6e4a329a9672cf34",
+      measurementId: "G-GLTPXG8LL2"
+    };
+    //Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //Upload process
+    document.getElementById("confirm").onclick = function () {
+      ImgName = document.getElementById("pictureImg").value;
+      var uploadTask = firebase.storage().ref("images/" + ImgName + ".png").put(files[0]);
+
+      uploadTask.on("state_changed", function (snapshot) {
+        var progress = (snapshot.bytesTranferred / snapshot.totalBytes) * 100;
+        document.getElementById("UpProgress").innerHTML = "Upload " + progress + "%";
+      },
+
+        function (error) {
+          alert("Error in uploading the image")
+        },
+
+        function () {
+          uploadTask.snapshot.ref.getDownloadURL().then(function (url) {
+            ImgUrl = url;
+
+            firebase.database().ref("Pictures/" + ImgName).set({
+              Name: ImgName,
+              Link: ImgUrl
+            });
+            alert("Image uploaded successfully!")
+          })
+        }
+      )
+    }
+  </script> -->
+
+    <!-- local upload instantiation -->
+    <!-- <script>
+      const cloudName = "dtu8kyhxq";
+      const cloudURL = "https://api.cloudinary.com/v1_1/dtu8kyhxq/auto/upload";
+      const uploadPreset = "uw_test";
+      const formData = new FormData();
+
+      document.getElementById("confirm").onclick = async function () {
+        const file = document.getElementById("file1").files[0];
+        formData.append("file", file);
+        formData.append("cloud_name", cloudName);
+        formData.append("upload_preset", uploadPreset);
+        console.log("Form Data:", file);
+        await fetch(cloudURL, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log("URL: ", data.url);
+          });
+      };
+
+      // const myWidget = cloudinary.createUploadWidget(
+      //   {
+      //     cloudName: cloudName,
+      //     uploadPreset: uploadPreset,
+      //     multiple: false,
+      //   },
+      //   (error, result) => {
+      //     if (!error && result && result.event === "success") {
+      //       console.log("Done! Here is the image info: ", result.info);
+      //       document
+      //         .getElementById("uploadedimage")
+      //         .setAttribute("src", result.info.secure_url);
+      //     }
+      //   }
+      // );
+
+      // document.getElementById("file1").addEventListener(
+      //   "click",
+      //   function () {
+      //     myWidget.open();
+      //   },
+      //   false
+      // );
+    </script> -->
+  </body>
+</html>
