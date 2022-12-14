@@ -61,7 +61,7 @@ marquee p {
 .main-map {
   width: 100vw;
 
-  height: 745px;
+  height: 470px;
 }
 
 .modal-container {
@@ -70,7 +70,7 @@ marquee p {
   position: absolute;
   top: 0;
   right: 0;
-  max-height: 745px;
+  max-height: 585px;
   /* animation: moveRightLeft 0.75s ease-in; */
   animation-delay: 0.1s;
   animation-fill-mode: backwards;
@@ -166,7 +166,7 @@ marquee p {
   padding: 0px 10px 30px 30px;
   margin-top: 20px;
   overflow-y: auto;
-  height: 630px;
+  height: 470px;
   margin-bottom: 30px;
 }
 
@@ -327,4 +327,10 @@ marquee p {
   background-color: #f3da9a;
   color: #5b432e;
   transform: scale(1.05);
+}
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 585px;
+  width: 100%;
 }

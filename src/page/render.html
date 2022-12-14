@@ -24,6 +24,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.16/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.16/"></script>
+    <script src="../js/3dbuilding.js"></script>
     <title>Bản đồ 3D</title>
   </head>
   <body>
@@ -63,7 +69,7 @@
             <a
               class="header-nav-link"
               onclick="activeNavLinkHeader(this)"
-              href="#lienhe"
+              href="./contact.html"
               >Liên hệ</a
             >
           </li>
@@ -85,29 +91,8 @@
 
       <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
     </header>
-
+    <h1 class="d3-map-title">Bản đồ 3D</h1>
     <div class="information-management-render-container">
-      <div class="notification-container">
-        <div class="notification-img-container">
-          <img
-            src="https://drive.google.com/uc?id=1UjdrccuXnvD6-1sRR0wkYsyTXlILK8DV"
-            alt=""
-          />
-        </div>
-        <div class="notification-text-container">
-          <h4>THÔNG BÁO:</h4>
-          <marquee direction="left" height="45" width="100%" bgcolor="white">
-            <p>
-              Ban quản lý Dinh Độc Lập thông báo khuyến mãi vé vào cổng cho các
-              đoàn học sinh/sinh viên tham quan khu di tích lịch sử từ ngày
-              06/12/2022 đến Tết nguyên đán
-            </p>
-          </marquee>
-        </div>
-      </div>
-
-      <h1 class="d3-map-title">Bản đồ 3D</h1>
-
       <div class="d3-map-container">
         <div class="map-container">
           <div id="viewDiv"></div>
@@ -326,7 +311,7 @@
             <li><a href="./home.html">Trang chủ</a></li>
             <li><a href="./visit.html">Tham quan</a></li>
             <li><a href="./render.html">Bản đồ 3D</a></li>
-            <li><a href="#lienhe">Liên hệ</a></li>
+            <li><a href="./contact.html">Liên hệ</a></li>
           </ul>
         </nav>
         <nav class="footer-nav">

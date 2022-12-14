@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+/* Section 1 */
+#section1 {
+  width: 100%;
+  margin: 20px 0px;
+}
+
+#section1 > p:nth-of-type(1) {
+  text-align: center;
+  color: #686868;
+  font-family: "Roboto Slab", serif;
+  margin: 16px auto;
+}
+
+/* Section 2 */
+#section2 {
+  background-image: url("../images/section2_background.png");
+  background-size: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.asterisk {
+  color: #b41616;
+}
+
+#section2 > form > label:nth-of-type(1) {
+  font-size: 28px;
+  color: #5b432e;
+  font-weight: bold;
+}
+
+#section2 > form {
+  padding: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: left;
+  row-gap: 20px;
+}
+
+#left-side > :not(#fsubmit) {
+  width: 100%;
+}
+
+#right-side > p:nth-of-type(1) {
+  font-size: 28px;
+  color: #5b432e;
+  font-weight: bold;
+}
+
+#fname,
+#femail,
+#ftitle {
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+}
+
+#fcontent {
+  height: 120px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+}
+
+#fsubmit {
+  width: 20%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #77552f;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+#left-side > label {
+  font-weight: bold;
+}
+
+#right-side > iframe {
+  width: 90%;
+  height: 400px;
+}
+
+#right-side > div {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+#right-side > div > * {
+  margin: 0 20px 0 0;
+}
+
+#right-side > hr {
+  width: 25%;
+  height: 5px;
+  background-color: #5b432e;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+#icon > img {
+  margin: 0 25px 0 0;
+}
+
+/* Section 3 */
+#section3 {
+  margin: 50px 0;
+}
+
+#title {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin: 20px 0;
+}
+#title > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#title > div > img {
+  margin: 0 20px;
+}
+#title > div > strong {
+  font-size: 36px;
+}
+#section3 > div:not(#title) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#section3 figure {
+  text-align: center;
+}
+section figcaption {
+  font-size: 22;
+  font-weight: bold;
+}
