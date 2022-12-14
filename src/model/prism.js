@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const Prism = new Schema({
   idFace: Schema.Types.ObjectId,
-  h: Number,
+  height: Number,
+  name: String,
   color: String,
   des: String,
 });

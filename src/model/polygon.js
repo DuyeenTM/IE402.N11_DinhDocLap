@@ -3,12 +3,13 @@ const Schema = mongoose.Schema;
 
 const symbolPolygonType = new Schema({
   type: String,
-  color: [Number],
-  outline: { color: [Number], width: Number },
+  color: String,
+  outline: { color: String, width: Number },
 });
 
 const Polygon = new Schema({
   type: String,
+  name: String,
   idNodes: [Schema.Types.ObjectId],
   symbol: symbolPolygonType,
 });

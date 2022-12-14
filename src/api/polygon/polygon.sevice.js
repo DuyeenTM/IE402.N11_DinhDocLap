@@ -1,12 +1,13 @@
-const { ObjectID } = require("bson");
 const Node = require("../../model/node");
 const Polygon = require("../../model/polygon");
 
 module.exports = {
-  getPolygons: function () {
+  getPolygons: function (req) {
     return new Promise(async function (resolve, reject) {
       try {
-        const res = await Polygon.find();
+        const res = await Polygon.find({
+          name: req.query.name,
+        });
         const newRes = [];
         for (let i = 0; i < res.length; ++i) {
           const nodeArr = [];
@@ -33,6 +34,7 @@ module.exports = {
         const data = req.body;
         const res = await Polygon.create({
           type: "polygon",
+          type: data.name,
           idNodes: data.idNodes,
           symbol: {
             type: "simple-fill",
@@ -56,15 +58,23 @@ module.exports = {
           const nodeArr = data[i].rings;
           const idNodes = [];
           for (let j = 0; j < nodeArr.length; ++j) {
-            const node = await Node.create({
+            const node = await Node.findOne({
               x: nodeArr[j][0],
               y: nodeArr[j][1],
               z: nodeArr[j][2],
             });
-            idNodes.push(node._id);
+            if (node === null) {
+              const node1 = await Node.create({
+                x: nodeArr[j][0],
+                y: nodeArr[j][1],
+                z: nodeArr[j][2],
+              });
+              idNodes.push(node1._id);
+            } else idNodes.push(node._id);
           }
           const polygon = await Polygon.create({
             type: "polygon",
+            name: data[i].name,
             idNodes: idNodes,
             symbol: {
               type: "simple-fill",
