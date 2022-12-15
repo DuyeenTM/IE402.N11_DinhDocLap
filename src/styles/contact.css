@@ -10,19 +10,21 @@ body {
 /* Section 1 */
 #section1 {
   width: 100%;
-  margin: 20px 0px;
+  margin: 20px auto;
 }
 
-#section1 > p:nth-of-type(1) {
+#section1 p {
   text-align: center;
+  font-weight: 600;
   color: #686868;
+  font-size: 24px;
   font-family: "Roboto Slab", serif;
   margin: 16px auto;
 }
 
 /* Section 2 */
 #section2 {
-  background-image: url("../images/section2_background.png");
+  background-image: url("../images/Contact/Retro\ BG.png");
   background-size: auto;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -85,6 +87,9 @@ body {
   color: white;
   outline: none;
   border: none;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 #left-side > label {
@@ -128,6 +133,7 @@ body {
   justify-content: center;
   justify-items: center;
   margin: 20px 0;
+  margin-bottom: 30px;
 }
 #title > div {
   display: flex;
@@ -138,7 +144,10 @@ body {
   margin: 0 20px;
 }
 #title > div > strong {
-  font-size: 36px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+  color: #686868;
 }
 #section3 > div:not(#title) {
   display: flex;
@@ -149,7 +158,8 @@ body {
   text-align: center;
 }
 section figcaption {
-  font-size: 22;
+  margin: 7px auto 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 #fsubmit {

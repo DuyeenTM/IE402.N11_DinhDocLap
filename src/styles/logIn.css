@@ -20,8 +20,8 @@
 
 .left {
   flex: 50%;
-  background-image: url("https://drive.google.com/uc?id=1Pxz-UfLBEteOvcmbQNYDC7C4hb9J60ev"),
-    url("https://drive.google.com/uc?id=1wURwnDRJCqK0wyKB9R7QMxWwxNzribuP");
+  background-image: url("../images/Login/Login\ Illustration.png"),
+    url("../images/Login/Login\ BG.png");
   background-repeat: no-repeat;
   background-size: 100%, cover;
   background-position: center 50px, center;

@@ -134,6 +134,10 @@ marquee p {
   /* display: inline-block; */
 }
 
+.header-modal-container a {
+  text-decoration: none;
+}
+
 .modal-title {
   font-size: 20px;
   margin: 0;

@@ -47,8 +47,7 @@ marquee p {
 }
 
 .title-banner {
-  background: url(https://drive.google.com/uc?id=1NOdBwM5FeriE-NVBjDRZ_FqnZNSlsIjl)
-    no-repeat;
+  background: url("../images/Visit/Banner.png") no-repeat;
   background-attachment: fixed;
   background-size: cover;
   width: 100vw;
@@ -178,16 +177,13 @@ table tr td:nth-child(1) {
 }
 
 .map-container {
-  background-image: url("https://drive.google.com/uc?id=11NYe2y2cWI3lNtrjLRNQeT_ipUEKXt_L");
+  background-image: url("../images/Visit/Map.jpg");
   background-position: center;
-
   background-size: 100%;
-
   width: 100%;
   display: flex;
   align-self: center;
   padding: 30px 70px;
-
   position: relative;
 }
 .map-container::after {
@@ -263,8 +259,7 @@ table tr td:nth-child(1) {
   position: absolute;
   width: 50px;
   height: 30px;
-  background: url("https://drive.google.com/uc?id=1xxJDZ4TgQB-mrDyhQw5bZSp-FSGPbBzW")
-    no-repeat;
+  background: url("../images/decoration.png") no-repeat;
   top: -70%;
   left: 45%;
   z-index: 1;
@@ -318,8 +313,7 @@ table tr td:nth-child(1) {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("https://drive.google.com/uc?id=1zzuaNP8abRlV-n3jhDYsYB4G80y-EV25")
-    no-repeat;
+  background: url("../images/Visit/Heritage.jpg") no-repeat;
   background-size: cover;
   transition: all 0.75s ease-in;
 }
@@ -339,8 +333,7 @@ table tr td:nth-child(1) {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("https://drive.google.com/uc?id=1M_AOy31jiAnPAgXTG1cl32f67xxdHb51")
-    no-repeat;
+  background: url("../images/Visit/Combo.jpg") no-repeat;
   background-size: cover;
   transition: all 0.75s ease-in;
 }
@@ -360,8 +353,7 @@ table tr td:nth-child(1) {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("https://drive.google.com/uc?id=1gGE9JeCp4uiGqi4KXCfyOIKVpyyQgAQ9")
-    no-repeat;
+  background: url("../images/Visit/Showroom.jpg") no-repeat;
   background-size: cover;
   transition: all 0.75s ease-in;
 }
