@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -117,59 +121,59 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
         <div>
-          <img src="Images/vector.png" />
+          <img src="../images/vector.png" />
           <span>135 Nam Kỳ Khởi Nghĩa, Quận 1, Tp HCM</span>
         </div>
         <div>
-          <img src="Images/email.png" />
+          <img src="../images/email.png" />
           <span>ddllienhe@gmail.com</span>
         </div>
         <hr />
         <div id="icon">
-          <img src="Images/facebook.png" />
-          <img src="Images/youtube.png" />
-          <img src="Images/instagram.png" />
+          <img src="../images/facebook.png" />
+          <img src="../images/youtube.png" />
+          <img src="../images/instagram.png" />
         </div>
       </aside>
     </section>
     <section id="section3">
       <div id="title">
-        <img src="Images/decoration.png" />
+        <img src="../images/decoration.png" />
         <div>
-          <img src="Images/Line.png" />
+          <img src="../images/Line.png" />
           <strong>Về nhóm chúng tôi</strong>
-          <img src="Images/Line.png" />
+          <img src="../images/Line.png" />
         </div>
       </div>
       <div>
         <figure>
-          <img src="Images/ChuongAvatar.png" />
+          <img src="../images/ChuongAvatar.png" />
           <figcaption>Trần Bình Chương</figcaption>
         </figure>
         <figure>
-          <img src="Images/DuyenAvatar.png" />
+          <img src="../images/DuyenAvatar.png" />
           <figcaption>Trương Mỹ Duyên</figcaption>
         </figure>
         <figure>
-          <img src="Images/HaiAvatar.png" />
+          <img src="../images/HaiAvatar.png" />
           <figcaption>Đặng Ngô Hồng Hải</figcaption>
         </figure>
       </div>
       <div>
         <figure>
-          <img src="Images/NhiAvatar.png" />
+          <img src="../images/NhiAvatar.png" />
           <figcaption>Lê Thị Yến nhi</figcaption>
         </figure>
         <figure>
-          <img src="Images/ChauAvatar.png" />
+          <img src="../images/ChauAvatar.png" />
           <figcaption>Bùi Thị Diễn Châu</figcaption>
         </figure>
         <figure>
-          <img src="Images/AnAvatar.png" />
+          <img src="../images/AnAvatar.png" />
           <figcaption>Nguyễn Văn An</figcaption>
         </figure>
         <figure>
-          <img src="Images/TamAvatar.png" />
+          <img src="../images/TamAvatar.png" />
           <figcaption>Nguyễn Hữu Tâm</figcaption>
         </figure>
       </div>
@@ -222,5 +226,60 @@
         <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    <script>
+      const avatar = document.getElementById("avarta");
+      const btnLogIn = document.getElementById("btnLogIn");
+      const logOut = document.getElementById("logOut");
+      const token = JSON.parse(localStorage.getItem("token"));
+      if (token) {
+        avatar.style.display = "block";
+        btnLogIn.style.display = "none";
+      } else {
+        avatar.style.display = "none";
+        btnLogIn.style.display = "block";
+      }
+      var notyf = new Notyf({
+        duration: 2000,
+        position: {
+          x: "right",
+          y: "bottom",
+        },
+        dismissible: true,
+      });
+      // prevent form submit
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const postFeedback = "http://localhost:3000/api/v1/feedback/post";
+
+        fetch(postFeedback, {
+          method: "POST",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fullname: fname.value,
+            email: femail.value,
+            title: ftitle.value,
+            content: fcontent.value,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.errorCode == 200) {
+              notyf.success("Gửi thành công");
+              form.reset();
+            } else {
+              notyf.error("Lỗi hệ thống, yêu cầu gửi của bạn không thành công");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    </script>
   </body>
 </html>

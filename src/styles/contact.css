@@ -152,3 +152,10 @@ section figcaption {
   font-size: 22;
   font-weight: bold;
 }
+#fsubmit {
+  transition: all 0.2s;
+}
+#fsubmit:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
