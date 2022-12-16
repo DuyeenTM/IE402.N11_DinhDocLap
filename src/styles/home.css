@@ -7,11 +7,11 @@
 
 :root {
     --header-height: 102px;
-    --text-color: #5B432E;
-    --header-bkg: #68121B;
-    --darkBrown: #C9AB5C;
-    --darkBrown2: #DCBA82;
-    --primary: #F9F2E6;
+    --text-color: #5b432e;
+    --header-bkg: #68121b;
+    --darkBrown: #c9ab5c;
+    --darkBrown2: #dcba82;
+    --primary: #f9f2e6;
 }
 
 html {
@@ -19,12 +19,12 @@ html {
 }
 
 body {
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
 }
 
 /* Notification */
 
-.notify{
+.notify {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -37,7 +37,7 @@ body {
     margin-top: -5px;
 }
 
-.notify span{
+.notify span {
     font-weight: 600;
     display: inline-block;
     min-width: 110px;
@@ -81,7 +81,7 @@ body {
     font-size: 48px;
 }
 
-.section-slider .btn-switch a{
+.section-slider .btn-switch a {
     text-align: center;
     text-decoration: none;
 }
@@ -127,8 +127,9 @@ body {
 /* Introduction */
 
 .section-introduction {
-    margin: 30px 70px;
+    margin: 30px auto;
     text-align: center;
+    max-width: 1440px;
 }
 
 .section-introduction .title {
@@ -138,17 +139,17 @@ body {
 }
 
 .section-introduction .title .line {
-    border-bottom: 1px solid #DCBA82;
+    border-bottom: 1px solid #dcba82;
     width: 40%;
 }
 
 .section-introduction .title h2 {
-    color: #5B432E;
+    color: #5b432e;
     font-size: 24px;
     font-family: "Roboto Slab", serif;
 }
 
-.section-introduction p{
+.section-introduction p {
     text-align: justify;
     margin: 10px 40px;
     line-height: 1.6;
@@ -160,8 +161,13 @@ body {
 
 /* History */
 .section-history {
-    background-image: url(../images/bkg-history.png), url(../images/hoa-tiet-goc-trai-tren.png), url(../images/hoa-tiet-goc-phai-duoi.png), url(../images/hoa-tiet-chuoi.png), url(../images/hoa-tiet-chuoi.png);
-    background-position: center, top left, right 10px bottom -30px, left center, right center;
+    max-width: 1440px;
+    background-image: url(../images/bkg-history.png),
+        url(../images/hoa-tiet-goc-trai-tren.png),
+        url(../images/hoa-tiet-goc-phai-duoi.png),
+        url(../images/hoa-tiet-chuoi.png), url(../images/hoa-tiet-chuoi.png);
+    background-position: center, top left, right 10px bottom -30px, left center,
+        right center;
     background-repeat: no-repeat;
     padding: 30px 50px;
     margin: 0 auto;
@@ -171,7 +177,6 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
-    
 }
 
 table {
@@ -181,7 +186,7 @@ table {
 table tr td:nth-child(1) {
     text-align: right;
     width: 50%;
-    border-right: 20px solid #D9D9D9;
+    border-right: 20px solid #d9d9d9;
     padding-right: 15px;
 }
 
@@ -206,13 +211,13 @@ table tr td .table-text {
     line-height: 1.8;
 }
 
-table tr td .img-col-2 img{
+table tr td .img-col-2 img {
     border: 15px solid #fff;
     height: 300px;
     margin-bottom: 10px;
 }
 
-table tr:last-child{
+table tr:last-child {
     text-align: center;
     width: 100%;
 }
@@ -232,7 +237,7 @@ table tr:last-child .img-col-2 {
     text-align: center;
 }
 
-table tr:last-child .table-text{
+table tr:last-child .table-text {
     text-align: center;
     padding: 0 20%;
 }
@@ -240,7 +245,8 @@ table tr:last-child .table-text{
 /* Map 2D */
 
 .section-map-2D {
-    margin: 30px 100px;
+    max-width: 1440px;
+    margin: 30px auto;
     text-align: center;
 }
 
@@ -256,12 +262,12 @@ table tr:last-child .table-text{
 }
 
 .section-map-2D .title .line {
-    border-bottom: 1px solid #DCBA82;
+    border-bottom: 1px solid #dcba82;
     width: 10%;
 }
 
 .section-map-2D .title h2 {
-    color: #5B432E;
+    color: #5b432e;
     margin: 0 20px;
     font-size: 24px;
     font-family: "Roboto Slab", serif;
@@ -307,7 +313,7 @@ table tr:last-child .table-text{
 
 /* Number text (1/3 etc) */
 .numbertext {
-    color: #5B432E;
+    color: #5b432e;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -344,10 +350,10 @@ table tr:last-child .table-text{
 
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: 0.4;
     }
 
     to {
-        opacity: 1
+        opacity: 1;
     }
 }
