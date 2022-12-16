@@ -76,8 +76,7 @@ marquee p {
   position: absolute;
   width: 50px;
   height: 30px;
-  background: url("https://drive.google.com/uc?id=1xxJDZ4TgQB-mrDyhQw5bZSp-FSGPbBzW")
-    no-repeat;
+  background: url("../images/decoration.png") no-repeat;
   top: -70%;
   left: 45%;
   z-index: 1;
@@ -227,7 +226,7 @@ textarea:focus {
 
 .tab-pane {
   color: #333;
-  background: url("https://drive.google.com/uc?id=1AmM-LYm7shffTuKS7YxAo04h41rhwP1T");
+  background: url("../images/Map/Update\ BG.png");
   background-size: cover;
   display: none;
 }
