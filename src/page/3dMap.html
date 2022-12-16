@@ -1,688 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bản đồ 3D</title>
-    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="../styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="../styles/footer.css" type="text/css" />
-    <link rel="stylesheet" href="../styles/3dMap.css" type="text/css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://js.arcgis.com/4.16/esri/themes/light/main.css"
-    />
-    <script src="https://js.arcgis.com/4.16/"></script>
-    <script src="../js/3dbuilding.js"></script>
-  </head>
-  <body>
-    <header class="container-header">
-      <div class="header-logo">
-        <img src="../images/Logo-1.png" alt="logo" />
-      </div>
-      <nav class="header-nav">
-        <ul>
-          <li>
-            <a
-              href="./home.html"
-              class="header-nav-link header-active"
-              onclick="activeNavLinkHeader(this)"
-              >Trang chủ</a
-            >
-          </li>
-          <li>
-            <a
-              class="header-nav-link"
-              onclick="activeNavLinkHeader(this)"
-              href="./visit.html"
-              >Tham quan</a
-            >
-          </li>
-          <li>
-            <a
-              class="header-nav-link"
-              onclick="activeNavLinkHeader(this)"
-              href="./render.html"
-              >Bản đồ 3D</a
-            >
-          </li>
-          <li>
-            <a
-              class="header-nav-link"
-              onclick="activeNavLinkHeader(this)"
-              href="./contact.html"
-              >Liên hệ</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div id="avarta" class="avarta">
-        <img
-          src="https://i1.sndcdn.com/artworks-CjUt4ngpBVu5RJIL-nn0uQA-t500x500.jpg"
-          alt="avarta"
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bản đồ 3D</title>
+        <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+        <link rel="stylesheet" href="../styles/header.css" type="text/css" />
+        <link rel="stylesheet" href="../styles/footer.css" type="text/css" />
+        <link rel="stylesheet" href="../styles/3dMap.css" type="text/css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
         />
-        <img
-          title="Đăng xuất"
-          id="logOut"
-          src="https://drive.google.com/uc?id=1s6PZ32Sxdw3i09soXxEqwkYM7LrGQgTn"
-          alt="logout"
+        <link
+            href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
+            rel="stylesheet"
         />
-      </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://js.arcgis.com/4.16/esri/themes/light/main.css"
+        />
+        <script src="https://js.arcgis.com/4.16/"></script>
+        <script src="../js/3dbuilding.js"></script>
+    </head>
+    <body>
+        <header class="container-header">
+            <div class="header-logo">
+                <img src="../images/Logo-1.png" alt="logo" />
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li>
+                        <a
+                            href="./home.html"
+                            class="header-nav-link header-active"
+                            onclick="activeNavLinkHeader(this)"
+                            >Trang chủ</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="header-nav-link"
+                            onclick="activeNavLinkHeader(this)"
+                            href="./visit.html"
+                            >Tham quan</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="header-nav-link"
+                            onclick="activeNavLinkHeader(this)"
+                            href="./render.html"
+                            >Bản đồ 3D</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="header-nav-link"
+                            onclick="activeNavLinkHeader(this)"
+                            href="./contact.html"
+                            >Liên hệ</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+            <div id="avarta" class="avarta">
+                <img
+                    src="https://i1.sndcdn.com/artworks-CjUt4ngpBVu5RJIL-nn0uQA-t500x500.jpg"
+                    alt="avarta"
+                />
+                <img
+                    title="Đăng xuất"
+                    id="logOut"
+                    src="https://drive.google.com/uc?id=1s6PZ32Sxdw3i09soXxEqwkYM7LrGQgTn"
+                    alt="logout"
+                />
+            </div>
 
-      <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
-    </header>
-    <div class="map-3d-container">
-      <h1 class="map-3d-title">Bản đồ 3D</h1>
-      <div id="viewDiv"></div>
+            <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
+        </header>
+        <div class="map-3d-container">
+            <h1 class="map-3d-title">Bản đồ 3D</h1>
+            <div id="viewDiv"></div>
 
-      <div
-        class="offcanvas offcanvas-end offcanvas-background"
-        tabindex="-1"
-        id="offcanvas"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas">
-            Giới thiệu về Dinh Độc lập
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Dinh Độc Lập là một trong những công trình kiến trúc độc đáo và
-                nổi tiếng bậc nhất thành phố Hồ Chí Minh, đã tồn tại hơn 150
-                năm. Công trình được ông La Grandière, viên Thống đốc Pháp tại
-                miền Nam Việt Nam, đặt viên đá khởi công xây dựng vào năm 1868
-                và hoàn tất vào năm 1871. Lúc đầu, dinh có tên là Dinh Norodom;
-                đến năm 1954, được đổi thành Dinh Độc Lập. Ngoài ra, dưới thời
-                Việt Nam Cộng hòa, tòa nhà này được gọi là Dinh Tổng thống hoặc
-                Phủ Đầu Rồng, bởi đây là nơi ở và làm việc của Tổng thống Việt
-                Nam Cộng hòa lúc bấy giờ. Với các giá trị đặc biệt của Dinh Độc
-                Lập, công trình này được công nhận là Di tích lịch sử văn hóa
-                quốc gia vào năm 1976. Đến năm 2009, Dinh Độc Lập được xếp hạng
-                là một trong mười Di tích quốc gia đặc biệt đầu tiên của Việt
-                Nam.
-              </p>
-              <img
-                src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/09/1-10.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background1"
-        tabindex="-1"
-        id="offcanvas1"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Thông tin về kiến trúc Dinh độc lập
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Dinh Ðộc Lập là một công trình kiến trúc độc đáo của Kiến trúc
-                sư Ngô Viết Thụ. Dinh được khởi công xây dựng ngày 01/7/1962 và
-                khánh thành vào ngày 31/10/1966. Khi thiết kế Dinh Ðộc Lập, Kiến
-                trúc sư Ngô Viết Thụ muốn tìm một ý nghĩa văn hóa cho công
-                trình, nên mọi sự xếp đặt từ bên trong nội thất cho đến tiền
-                diện bên ngoài, tất cả đều tượng trưng cho triết lý cổ truyền,
-                nghi lễ Phương đông và cá tính của dân tộc. Kiến trúc sư Ngô
-                Viết Thụ đã kết hợp hài hoà giữa nghệ thuật kiến trúc hiện đại
-                với kiến trúc truyền thống Phương Ðông. Toàn thể bình diện của
-                Dinh làm thành hình chữ CÁT ( 吉 ) có nghĩa là tốt lành, may
-                mắn; Tâm của Dinh là vị trí phòng Trình quốc thư; Lầu thượng là
-                Tứ phương vô sự lầu hình chữ KHẨU ( 口 ) để đề cao giáo dục và
-                tự do ngôn luận....
-              </p>
-              <img
-                src="https://dinhdoclap.gov.vn/wp-content/uploads/2018/03/1-1.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background2"
-        tabindex="-1"
-        id="offcanvas2"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Thông tin các tầng
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Dinh Độc Lập có tổng diện tích là 120.000 m2 trong đó diện tich
-                mặt bằng là 4.500 m2. Toàn thể dinh thự có 3 tầng lầu chính, 2
-                gác lửng, 1 sân thượng, 1 tầng trệt, 1 tầng hầm. Tổng cộng 95
-                phòng chức năng
-              </p>
-              <img
-                src="https://cdn.tgdd.vn/Files/2022/02/21/1416529/du-lich-dinh-doc-lap-chung-nhan-lich-su-tram-nam-sai-gon-202202210948120835.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background2"
-        tabindex="-1"
-        id="offcanvas3"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Thông tin về tầng 1
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Tầng 1 của Dinh Độc lập bao gồm nhiều cửa số, với 2 lối ra vào
-                cửa trước và cửa sau... Có phòng họp nội các - nơi diễn ra các
-                cuộc họp vào thứ 4 hàng tuần.
-              </p>
-              <img
-                src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/07/anh-4-phong-khanh-tiet.png"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background2"
-        tabindex="-1"
-        id="offcanvas4"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Thông tin về tầng 2
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <img
-                src="https://phuot3mien.com/wp-content/uploads/2021/04/phong-lam-viec-cua-tong-thong.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-              <p>
-                Phía sau bàn làm việc trang trí bức tranh sơn dầu do họa sĩ Phạm
-                Cơ vẽ cảnh cầu Tri Thủy ở vùng biển Ninh Chữ , Phan Rang. Đây là
-                quê hương của ông Thiệu. Góc phải của phòng có bức tranh thêu
-                tay trên nền nhung đỏ với hình ảnh chim hạc đậu trên cây tùng
-                biểu ý cho câu chúc thọ. Đó là quà tặng của Đại tướng Mul Hien
-                The thuộc lục quân đại hàn dân quốc tặng cho TT VNCH nhưng cuộc
-                họp cấp cao tham ưu cao 1971. Bên trái có một cánh cửa màu nâu,
-                đó là cầu thang dẫn xuống tầng hầm mỗi khi chiến sự sảy ra
-              </p>
-              <img
-                src="https://znews-photo.zingcdn.me/w660/Uploaded/lerl/2014_04_30/NHH_5489.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background2"
-        tabindex="-1"
-        id="offcanvas5"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Thông tin về tầng 3
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Tầng 3 này gồm có Phòng Giải Trí, nhiều trò chơi như đánh bài,
-                chơi mạt trược giúp cho các lãnh đạo giải stress do Việt Cộng
-                hành. Ngoài ra còn có phòng ăn, lúc các lãnh đạo chơi mệt tạt
-                qua ăn uống luôn cho tiện đỡ phải đi xa. Đặc biệt trên lầu 3 còn
-                có phòng chiếu phim cực kỳ xịn xò. Những dàn máy cổ nhìn sơ qua
-                là đã thấy thích rồi. Thêm nữa trên đây còn treo một bức tranh
-                rất đẹp của Thúy Kiều khi gặp Kim Trọng
-              </p>
-              <img
-                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background3"
-        tabindex="-1"
-        id="offcanvas6"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Địa điểm tham quan - Khu cố định
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Kim Khu cố định của Dinh Độc Lập có hơn 100 căn phòng được trang
-                trí theo từng phong cách khác nhau, bao gồm các phòng làm việc
-                của Tổng thống – Phó Tổng thống, phòng nội các, phòng đại yên,
-                phòng khánh tiết, phòng ủy nhiệm thư, phòng trình quốc thư,
-                phòng thông tin liên lạc, phòng ngủ của gia đình Tổng thống… Nổi
-                bật trong đó phải kể đến: Phòng Khánh Tiết có sức chứa lên đến
-                500 người – nơi diễn ra các cuộc họp, chiêu đãi;
-              </p>
-              <img
-                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background3"
-        tabindex="-1"
-        id="offcanvas7"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Địa điểm tham quan - Khu chuyên đề
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Kim Khu cố định của Dinh Độc Lập có hơn 100 căn phòng được trang
-                trí theo từng phong cách khác nhau, bao gồm các phòng làm việc
-                của Tổng thống – Phó Tổng thống, phòng nội các, phòng đại yên,
-                phòng khánh tiết, phòng ủy nhiệm thư, phòng trình quốc thư,
-                phòng thông tin liên lạc, phòng ngủ của gia đình Tổng thống… Nổi
-                bật trong đó phải kể đến: Phòng Khánh Tiết có sức chứa lên đến
-                500 người – nơi diễn ra các cuộc họp, chiêu đãi;
-              </p>
-              <img
-                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="offcanvas offcanvas-end offcanvas-background3"
-        tabindex="-1"
-        id="offcanvas8"
-        data-bs-keyboard="false"
-        data-bs-backdrop="false"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title d-none d-sm-block" id="offcanvas1">
-            Địa điểm tham quan - Khu trưng bày
-          </h5>
-          <a href="#"> <button class="map-3d-feedback">Góp ý</button></a>
-        </div>
-        <div class="offcanvas-body px-0">
-          <div class="offcanvas-content">
-            <div class="offcanvas-content-detail">
-              <p>
-                Kim Khu cố định của Dinh Độc Lập có hơn 100 căn phòng được trang
-                trí theo từng phong cách khác nhau, bao gồm các phòng làm việc
-                của Tổng thống – Phó Tổng thống, phòng nội các, phòng đại yên,
-                phòng khánh tiết, phòng ủy nhiệm thư, phòng trình quốc thư,
-                phòng thông tin liên lạc, phòng ngủ của gia đình Tổng thống… Nổi
-                bật trong đó phải kể đến: Phòng Khánh Tiết có sức chứa lên đến
-                500 người – nơi diễn ra các cuộc họp, chiêu đãi;
-              </p>
-              <img
-                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
-                alt="dinh-doc-lap"
-                width="500px"
-              />
-            </div>
-            <iconify-icon
-              icon="material-symbols:play-arrow-rounded"
-              type="button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-              class="toggle-icon-off-detail"
-            ></iconify-icon>
-          </div>
-        </div>
-      </div>
-
-      <div class="map-3d-bottom-navigation">
-        <div
-          class="map-3d-block"
-          id="map-3d-block"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
-          role="button"
-        >
-          <div class="map-3d-block-detail">
-            <h5>Giới thiệu Dinh Độc Lập</h5>
-            <p>
-              Dinh Độc Lập là một trong những công trình kiến trúc độc đáo và
-              nổi tiếng bậc nhất TP.HCM...
-            </p>
-
-            <div class="map-3d-block-detail-watch-more">
-              <a href="#"
-                >Xem thêm
-                <iconify-icon
-                  icon="material-symbols:read-more"
-                  class="map-3d-icon-watch-more"
-                ></iconify-icon
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="map-3d-block"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas1"
-          role="button"
-        >
-          <div class="map-3d-block-detail">
-            <h5>Xem thông tin về kiến trúc</h5>
-            <p>
-              Kiến trúc đã kết hợp hài hòa giữa nghệ thuật kiến trúc hiện đại và
-              kiến trúc truyền thống Phương Đông...
-            </p>
-            <div class="map-3d-block-detail-watch-more">
-              <a href="#"
-                >Xem thêm
-                <iconify-icon
-                  icon="material-symbols:read-more"
-                  class="map-3d-icon-watch-more"
-                ></iconify-icon
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="map-3d-block"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas2"
-          role="button"
-        >
-          <div class="map-3d-block-detail">
-            <h5>Xem thông tin về các tầng</h5>
-            <ul>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas3"
-                  role="button"
-                  >Tầng 1</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas4"
-                  role="button"
-                  >Tầng 2</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas5"
-                  role="button"
-                  >Tầng 3</a
-                >
-              </li>
-            </ul>
-            <div class="map-3d-block-detail-watch-more">
-              <a href="#"
-                >Xem thêm
-                <iconify-icon
-                  icon="material-symbols:read-more"
-                  class="map-3d-icon-watch-more"
-                ></iconify-icon
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="map-3d-block">
-          <div class="map-3d-block-detail">
-            <h5>Xem các địa điểm tham quan</h5>
-            <ul>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas6"
-                  role="button"
-                  >Khu cố định</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas7"
-                  role="button"
-                  >Khu di tích</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas8"
-                  role="button"
-                  >Khu vui chơi</a
-                >
-              </li>
-            </ul>
-            <div class="map-3d-block-detail-watch-more">
-              <a href="#"
-                >Xem thêm
-                <iconify-icon
-                  icon="material-symbols:read-more"
-                  class="map-3d-icon-watch-more"
-                ></iconify-icon
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-  <footer class="container-footer">
-    <div class="content-footer">
-      <a href="./home.html" class="footer-logo">
-        <img src="../images/Logo-1.png" alt="logo" />
-      </a>
-      <nav class="footer-nav">
-        <h2>Liên kết</h2>
-        <ul>
-          <li><a href="./home.html">Trang chủ</a></li>
-          <li><a href="../html/visit.html">Tham quan</a></li>
-          <li><a href="../html/render.html">Bản đồ 3D</a></li>
-          <li><a href="./contact.html">Liên hệ</a></li>
-        </ul>
-      </nav>
-      <nav class="footer-nav">
-        <h2>Thông tin liên hệ</h2>
-        <ul>
-          <li>
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <span>Điện thoại: 028.38223652</span>
-          </li>
-          <li>
-            <i class="fa fa-fax" aria-hidden="true"></i>
-            <span>Fax: 080.85008</span>
-          </li>
-          <li>
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-            <span
-              >135 Nam Kỳ Khởi Nghĩa, <br />
-              quận 1, TP.HCM</span
+            <div
+                class="offcanvas offcanvas-end offcanvas-background"
+                tabindex="-1"
+                id="offcanvas"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
             >
-          </li>
-        </ul>
-      </nav>
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas"
+                    >
+                        Giới thiệu về Dinh Độc lập
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Dinh Độc Lập là một trong những công trình kiến
+                                trúc độc đáo và nổi tiếng bậc nhất thành phố Hồ
+                                Chí Minh, đã tồn tại hơn 150 năm. Công trình
+                                được ông La Grandière, viên Thống đốc Pháp tại
+                                miền Nam Việt Nam, đặt viên đá khởi công xây
+                                dựng vào năm 1868 và hoàn tất vào năm 1871. Lúc
+                                đầu, dinh có tên là Dinh Norodom; đến năm 1954,
+                                được đổi thành Dinh Độc Lập. Ngoài ra, dưới thời
+                                Việt Nam Cộng hòa, tòa nhà này được gọi là Dinh
+                                Tổng thống hoặc Phủ Đầu Rồng, bởi đây là nơi ở
+                                và làm việc của Tổng thống Việt Nam Cộng hòa lúc
+                                bấy giờ. Với các giá trị đặc biệt của Dinh Độc
+                                Lập, công trình này được công nhận là Di tích
+                                lịch sử văn hóa quốc gia vào năm 1976. Đến năm
+                                2009, Dinh Độc Lập được xếp hạng là một trong
+                                mười Di tích quốc gia đặc biệt đầu tiên của Việt
+                                Nam.
+                            </p>
+                            <img
+                                src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/09/1-10.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
 
-      <nav class="footer-nav">
-        <h2>Theo dõi chúng tôi</h2>
-        <div class="socials">
-          <i class="fa fa-facebook-official" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-          <i class="fa fa-instagram" aria-hidden="true"></i>
+            <div
+                class="offcanvas offcanvas-end offcanvas-background1"
+                tabindex="-1"
+                id="offcanvas1"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Thông tin về kiến trúc Dinh độc lập
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Dinh Ðộc Lập là một công trình kiến trúc độc đáo
+                                của Kiến trúc sư Ngô Viết Thụ. Dinh được khởi
+                                công xây dựng ngày 01/7/1962 và khánh thành vào
+                                ngày 31/10/1966. Khi thiết kế Dinh Ðộc Lập, Kiến
+                                trúc sư Ngô Viết Thụ muốn tìm một ý nghĩa văn
+                                hóa cho công trình, nên mọi sự xếp đặt từ bên
+                                trong nội thất cho đến tiền diện bên ngoài, tất
+                                cả đều tượng trưng cho triết lý cổ truyền, nghi
+                                lễ Phương đông và cá tính của dân tộc. Kiến trúc
+                                sư Ngô Viết Thụ đã kết hợp hài hoà giữa nghệ
+                                thuật kiến trúc hiện đại với kiến trúc truyền
+                                thống Phương Ðông. Toàn thể bình diện của Dinh
+                                làm thành hình chữ CÁT ( 吉 ) có nghĩa là tốt
+                                lành, may mắn; Tâm của Dinh là vị trí phòng
+                                Trình quốc thư; Lầu thượng là Tứ phương vô sự
+                                lầu hình chữ KHẨU ( 口 ) để đề cao giáo dục và
+                                tự do ngôn luận....
+                            </p>
+                            <img
+                                src="https://dinhdoclap.gov.vn/wp-content/uploads/2018/03/1-1.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background2"
+                tabindex="-1"
+                id="offcanvas2"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Thông tin các tầng
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Dinh Độc Lập có tổng diện tích là 120.000 m2
+                                trong đó diện tich mặt bằng là 4.500 m2. Toàn
+                                thể dinh thự có 3 tầng lầu chính, 2 gác lửng, 1
+                                sân thượng, 1 tầng trệt, 1 tầng hầm. Tổng cộng
+                                95 phòng chức năng
+                            </p>
+                            <img
+                                src="https://cdn.tgdd.vn/Files/2022/02/21/1416529/du-lich-dinh-doc-lap-chung-nhan-lich-su-tram-nam-sai-gon-202202210948120835.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background2"
+                tabindex="-1"
+                id="offcanvas3"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Thông tin về tầng 1
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Tầng 1 của Dinh Độc lập bao gồm nhiều cửa số,
+                                với 2 lối ra vào cửa trước và cửa sau... Có
+                                phòng họp nội các - nơi diễn ra các cuộc họp vào
+                                thứ 4 hàng tuần.
+                            </p>
+                            <img
+                                src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2017/07/anh-4-phong-khanh-tiet.png"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background2"
+                tabindex="-1"
+                id="offcanvas4"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Thông tin về tầng 2
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <img
+                                src="https://phuot3mien.com/wp-content/uploads/2021/04/phong-lam-viec-cua-tong-thong.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                            <p>
+                                Phía sau bàn làm việc trang trí bức tranh sơn
+                                dầu do họa sĩ Phạm Cơ vẽ cảnh cầu Tri Thủy ở
+                                vùng biển Ninh Chữ , Phan Rang. Đây là quê hương
+                                của ông Thiệu. Góc phải của phòng có bức tranh
+                                thêu tay trên nền nhung đỏ với hình ảnh chim hạc
+                                đậu trên cây tùng biểu ý cho câu chúc thọ. Đó là
+                                quà tặng của Đại tướng Mul Hien The thuộc lục
+                                quân đại hàn dân quốc tặng cho TT VNCH nhưng
+                                cuộc họp cấp cao tham ưu cao 1971. Bên trái có
+                                một cánh cửa màu nâu, đó là cầu thang dẫn xuống
+                                tầng hầm mỗi khi chiến sự sảy ra
+                            </p>
+                            <img
+                                src="https://znews-photo.zingcdn.me/w660/Uploaded/lerl/2014_04_30/NHH_5489.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background2"
+                tabindex="-1"
+                id="offcanvas5"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Thông tin về tầng 3
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Tầng 3 này gồm có Phòng Giải Trí, nhiều trò chơi
+                                như đánh bài, chơi mạt trược giúp cho các lãnh
+                                đạo giải stress do Việt Cộng hành. Ngoài ra còn
+                                có phòng ăn, lúc các lãnh đạo chơi mệt tạt qua
+                                ăn uống luôn cho tiện đỡ phải đi xa. Đặc biệt
+                                trên lầu 3 còn có phòng chiếu phim cực kỳ xịn
+                                xò. Những dàn máy cổ nhìn sơ qua là đã thấy
+                                thích rồi. Thêm nữa trên đây còn treo một bức
+                                tranh rất đẹp của Thúy Kiều khi gặp Kim Trọng
+                            </p>
+                            <img
+                                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background3"
+                tabindex="-1"
+                id="offcanvas6"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Địa điểm tham quan - Khu cố định
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Kim Khu cố định của Dinh Độc Lập có hơn 100 căn
+                                phòng được trang trí theo từng phong cách khác
+                                nhau, bao gồm các phòng làm việc của Tổng thống
+                                – Phó Tổng thống, phòng nội các, phòng đại yên,
+                                phòng khánh tiết, phòng ủy nhiệm thư, phòng
+                                trình quốc thư, phòng thông tin liên lạc, phòng
+                                ngủ của gia đình Tổng thống… Nổi bật trong đó
+                                phải kể đến: Phòng Khánh Tiết có sức chứa lên
+                                đến 500 người – nơi diễn ra các cuộc họp, chiêu
+                                đãi;
+                            </p>
+                            <img
+                                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background3"
+                tabindex="-1"
+                id="offcanvas7"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Địa điểm tham quan - Khu chuyên đề
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Kim Khu cố định của Dinh Độc Lập có hơn 100 căn
+                                phòng được trang trí theo từng phong cách khác
+                                nhau, bao gồm các phòng làm việc của Tổng thống
+                                – Phó Tổng thống, phòng nội các, phòng đại yên,
+                                phòng khánh tiết, phòng ủy nhiệm thư, phòng
+                                trình quốc thư, phòng thông tin liên lạc, phòng
+                                ngủ của gia đình Tổng thống… Nổi bật trong đó
+                                phải kể đến: Phòng Khánh Tiết có sức chứa lên
+                                đến 500 người – nơi diễn ra các cuộc họp, chiêu
+                                đãi;
+                            </p>
+                            <img
+                                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="offcanvas offcanvas-end offcanvas-background3"
+                tabindex="-1"
+                id="offcanvas8"
+                data-bs-keyboard="false"
+                data-bs-backdrop="false"
+            >
+                <div class="offcanvas-header">
+                    <h5
+                        class="offcanvas-title d-none d-sm-block"
+                        id="offcanvas1"
+                    >
+                        Địa điểm tham quan - Khu trưng bày
+                    </h5>
+                    <a href="#">
+                        <button class="map-3d-feedback">Góp ý</button></a
+                    >
+                </div>
+                <div class="offcanvas-body px-0">
+                    <div class="offcanvas-content">
+                        <div class="offcanvas-content-detail">
+                            <p>
+                                Kim Khu cố định của Dinh Độc Lập có hơn 100 căn
+                                phòng được trang trí theo từng phong cách khác
+                                nhau, bao gồm các phòng làm việc của Tổng thống
+                                – Phó Tổng thống, phòng nội các, phòng đại yên,
+                                phòng khánh tiết, phòng ủy nhiệm thư, phòng
+                                trình quốc thư, phòng thông tin liên lạc, phòng
+                                ngủ của gia đình Tổng thống… Nổi bật trong đó
+                                phải kể đến: Phòng Khánh Tiết có sức chứa lên
+                                đến 500 người – nơi diễn ra các cuộc họp, chiêu
+                                đãi;
+                            </p>
+                            <img
+                                src="https://phuot3mien.com/wp-content/uploads/2021/04/dinh-doc-lap-18.jpg"
+                                alt="dinh-doc-lap"
+                                width="500px"
+                            />
+                        </div>
+                        <iconify-icon
+                            icon="material-symbols:play-arrow-rounded"
+                            type="button"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"
+                            class="toggle-icon-off-detail"
+                        ></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-3d-bottom-navigation">
+                <div
+                    class="map-3d-block"
+                    id="map-3d-block"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvas"
+                    role="button"
+                >
+                    <div class="map-3d-block-detail">
+                        <h5>Giới thiệu Dinh Độc Lập</h5>
+                        <p>
+                            Dinh Độc Lập là một trong những công trình kiến trúc
+                            độc đáo và nổi tiếng bậc nhất TP.HCM...
+                        </p>
+
+                        <div class="map-3d-block-detail-watch-more">
+                            <a href="#"
+                                >Xem thêm
+                                <iconify-icon
+                                    icon="material-symbols:read-more"
+                                    class="map-3d-icon-watch-more"
+                                ></iconify-icon
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="map-3d-block"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvas1"
+                    role="button"
+                >
+                    <div class="map-3d-block-detail">
+                        <h5>Xem thông tin về kiến trúc</h5>
+                        <p>
+                            Kiến trúc đã kết hợp hài hòa giữa nghệ thuật kiến
+                            trúc hiện đại và kiến trúc truyền thống Phương
+                            Đông...
+                        </p>
+                        <div class="map-3d-block-detail-watch-more">
+                            <a href="#"
+                                >Xem thêm
+                                <iconify-icon
+                                    icon="material-symbols:read-more"
+                                    class="map-3d-icon-watch-more"
+                                ></iconify-icon
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="map-3d-block"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvas2"
+                    role="button"
+                >
+                    <div class="map-3d-block-detail">
+                        <h5>Xem thông tin về các tầng</h5>
+                        <ul>
+                            <li>
+                                <a
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas3"
+                                    role="button"
+                                    >Tầng 1</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas4"
+                                    role="button"
+                                    >Tầng 2</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas5"
+                                    role="button"
+                                    >Tầng 3</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="map-3d-block-detail-watch-more">
+                            <a href="#"
+                                >Xem thêm
+                                <iconify-icon
+                                    icon="material-symbols:read-more"
+                                    class="map-3d-icon-watch-more"
+                                ></iconify-icon
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-3d-block">
+                    <div class="map-3d-block-detail">
+                        <h5>Xem các địa điểm tham quan</h5>
+                        <ul>
+                            <li>
+                                <a
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas6"
+                                    role="button"
+                                    >Khu cố định</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas7"
+                                    role="button"
+                                    >Khu di tích</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvas8"
+                                    role="button"
+                                    >Khu vui chơi</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="map-3d-block-detail-watch-more">
+                            <a href="#"
+                                >Xem thêm
+                                <iconify-icon
+                                    icon="material-symbols:read-more"
+                                    class="map-3d-icon-watch-more"
+                                ></iconify-icon
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-    </div>
-    <div class="bottom">
-      <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
-    </div>
-  </footer>
+    </body>
+    <footer class="container-footer">
+        <div class="content-footer">
+            <a href="./home.html" class="footer-logo">
+                <img src="../images/Logo-1.png" alt="logo" />
+            </a>
+            <nav class="footer-nav">
+                <h2>Liên kết</h2>
+                <ul>
+                    <li><a href="./home.html">Trang chủ</a></li>
+                    <li><a href="./visit.html">Tham quan</a></li>
+                    <li><a href="./render.html">Bản đồ 3D</a></li>
+                    <li><a href="./contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-nav">
+                <h2>Thông tin liên hệ</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>Điện thoại: 028.38223652</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-fax" aria-hidden="true"></i>
+                        <span>Fax: 080.85008</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span
+                            >135 Nam Kỳ Khởi Nghĩa, <br />
+                            quận 1, TP.HCM</span
+                        >
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="footer-nav">
+                <h2>Theo dõi chúng tôi</h2>
+                <div class="socials">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </div>
+            </nav>
+        </div>
+        <div class="bottom">
+            <p>&copy; 2022 Bản quyền thuộc về Dinh Độc Lập</p>
+        </div>
+    </footer>
 </html>
 
 <script>
-  const links = document.querySelectorAll(".map-3d-block");
+    const links = document.querySelectorAll(".map-3d-block");
 
-  if (links.length) {
-    links.forEach((link) => {
-      link.addEventListener("click", (e) => {
+    if (links.length) {
         links.forEach((link) => {
-          link.classList.remove("map-3d-block-active");
+            link.addEventListener("click", (e) => {
+                links.forEach((link) => {
+                    link.classList.remove("map-3d-block-active");
+                });
+                e.preventDefault();
+                link.classList.add("map-3d-block-active");
+            });
         });
-        e.preventDefault();
-        link.classList.add("map-3d-block-active");
-      });
-    });
-  }
+    }
 </script>
