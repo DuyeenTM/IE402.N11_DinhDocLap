@@ -2,6 +2,29 @@ const Node = require("../../model/node");
 const Polygon = require("../../model/polygon");
 
 module.exports = {
+  getAll: function (req) {
+    return new Promise(async function (resolve, reject) {
+      try {
+        const res = await Polygon.find();
+        const newRes = [];
+        for (let i = 0; i < res.length; ++i) {
+          const nodeArr = [];
+          for (let j = 0; j < res[i].idNodes.length; j++) {
+            const n = await Node.findOne({ _id: res[i].idNodes[j] });
+            nodeArr.push([n.x, n.y, n.z]);
+          }
+          newRes.push({
+            type: res[i].type,
+            rings: nodeArr,
+            symbol: res[i].symbol,
+          });
+        }
+        resolve(newRes);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  },
   getPolygons: function (req) {
     return new Promise(async function (resolve, reject) {
       try {
