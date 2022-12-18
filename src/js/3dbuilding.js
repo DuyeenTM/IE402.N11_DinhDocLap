@@ -1300,7 +1300,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 125000);
+    }, 120000);
   };
   add2a();
 
@@ -1326,7 +1326,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 135000);
+    }, 125000);
   };
   add3();
 
@@ -1352,10 +1352,10 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 145000);
+    }, 130000);
   };
   add3a();
-
+  //
   const add4 = () => {
     setTimeout(async () => {
       esriRequest(
@@ -1378,7 +1378,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 155000);
+    }, 275000);
   };
   add4();
 
@@ -1404,7 +1404,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 165000);
+    }, 280000);
   };
   add4a();
 
@@ -1430,7 +1430,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 175000);
+    }, 205000);
   };
   add5();
 
@@ -1456,7 +1456,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 185000);
+    }, 210000);
   };
   add5a();
 
@@ -1482,7 +1482,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 195000);
+    }, 215000);
   };
   add6();
 
@@ -1508,7 +1508,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 205000);
+    }, 220000);
   };
   add6a();
 
@@ -1534,7 +1534,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 215000);
+    }, 225000);
   };
   add7();
 
@@ -1560,7 +1560,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 225000);
+    }, 230000);
   };
   add8();
 
@@ -1612,7 +1612,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 245000);
+    }, 240000);
   };
   add9a();
 
@@ -1638,7 +1638,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 255000);
+    }, 245000);
   };
   add10();
 
@@ -1664,7 +1664,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 265000);
+    }, 250000);
   };
   add10a();
 
@@ -1690,7 +1690,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 275000);
+    }, 255000);
   };
   add11();
 
@@ -1716,7 +1716,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 285000);
+    }, 260000);
   };
   add11a();
 
@@ -1742,7 +1742,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 295000);
+    }, 265000);
   };
   add12();
 
@@ -1768,7 +1768,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 305000);
+    }, 270000);
   };
   add12a();
 
@@ -1794,7 +1794,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 315000);
+    }, 420000);
   };
   add13();
 
@@ -1820,7 +1820,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 325000);
+    }, 425000);
   };
   add13a();
 
@@ -1846,7 +1846,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 335000);
+    }, 285000);
   };
   add14();
 
@@ -1872,7 +1872,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 345000);
+    }, 290000);
   };
   add14a();
 
@@ -1898,7 +1898,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 355000);
+    }, 295000);
   };
   add15();
 
@@ -1924,7 +1924,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 365000);
+    }, 300000);
   };
   add15a();
 
@@ -1950,7 +1950,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 375000);
+    }, 305000);
   };
   add16();
 
@@ -1976,7 +1976,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 385000);
+    }, 310000);
   };
   add16a();
 
@@ -2002,7 +2002,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 395000);
+    }, 315000);
   };
   add17();
 
@@ -2028,7 +2028,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 405000);
+    }, 320000);
   };
   add17a();
 
@@ -2054,7 +2054,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 415000);
+    }, 325000);
   };
   add18();
 
@@ -2080,7 +2080,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 425000);
+    }, 330000);
   };
   add18a();
 
@@ -2106,7 +2106,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 435000);
+    }, 335000);
   };
   add19();
 
@@ -2132,7 +2132,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 445000);
+    }, 340000);
   };
   add19a();
 
@@ -2158,7 +2158,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 455000);
+    }, 345000);
   };
   add20();
 
@@ -2184,7 +2184,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 465000);
+    }, 350000);
   };
   add20a();
 
@@ -2210,7 +2210,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 475000);
+    }, 355000);
   };
   add21();
 
@@ -2236,7 +2236,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 485000);
+    }, 360000);
   };
   add21a();
 
@@ -2262,7 +2262,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 495000);
+    }, 365000);
   };
   add22();
 
@@ -2288,7 +2288,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 505000);
+    }, 370000);
   };
   add22a();
 
@@ -2314,7 +2314,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 515000);
+    }, 375000);
   };
   add23();
 
@@ -2340,7 +2340,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 525000);
+    }, 380000);
   };
   add23a();
 
@@ -2366,7 +2366,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 535000);
+    }, 385000);
   };
   add24();
 
@@ -2392,7 +2392,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 545000);
+    }, 390000);
   };
   add24a();
 
@@ -2418,7 +2418,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 555000);
+    }, 395000);
   };
   add25();
 
@@ -2444,7 +2444,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 565000);
+    }, 400000);
   };
   add25a();
 
@@ -2460,7 +2460,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 575000);
+    }, 405000);
   };
   add26();
 
@@ -2486,7 +2486,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 585000);
+    }, 410000);
   };
   add27();
 
@@ -2512,7 +2512,7 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 595000);
+    }, 415000);
   };
   add27a();
 
@@ -2733,7 +2733,7 @@ require([
       await map.layers.add(prism12_2);
       await map.layers.add(prism12_3);
       await map.layers.add(prism12_4);
-    }, 605000);
+    }, 135000);
   };
   addGeojson22();
 
@@ -2743,7 +2743,7 @@ require([
       await map.layers.add(prism12_6);
       await map.layers.add(prism12_7);
       await map.layers.add(prism12_8);
-    }, 700000);
+    }, 141000);
   };
   addGeojson23();
 
@@ -2753,7 +2753,7 @@ require([
       await map.layers.add(prism13_2);
       await map.layers.add(prism13_3);
       await map.layers.add(prism13_4);
-    }, 705000);
+    }, 147000);
   };
   addGeojson24();
 
@@ -2763,7 +2763,7 @@ require([
       await map.layers.add(prism14_2);
       await map.layers.add(prism15);
       await map.layers.add(prism16);
-    }, 710000);
+    }, 153000);
   };
   addGeojson25();
 
@@ -2773,7 +2773,7 @@ require([
       await map.layers.add(prism18_1);
       await map.layers.add(prism18_2);
       await map.layers.add(prism19);
-    }, 715000);
+    }, 159000);
   };
   addGeojson26();
 
@@ -2783,7 +2783,7 @@ require([
       await map.layers.add(prism21);
       await map.layers.add(prism23);
       await map.layers.add(prism24);
-    }, 720000);
+    }, 165000);
   };
   addGeojson27();
 
@@ -2793,7 +2793,7 @@ require([
       await map.layers.add(prism26);
       await map.layers.add(prism27_1);
       await map.layers.add(prism27_2);
-    }, 725000);
+    }, 171000);
   };
   addGeojson28();
 
@@ -2803,7 +2803,7 @@ require([
       await map.layers.add(prism28_2);
       await map.layers.add(prism29);
       await map.layers.add(prism30);
-    }, 730000);
+    }, 176000);
   };
   addGeojson29();
 
@@ -2813,7 +2813,7 @@ require([
       await map.layers.add(prism22_2);
       await map.layers.add(prism22_3);
       await map.layers.add(prism22_4);
-    }, 735000);
+    }, 182000);
   };
   addGeojson30();
 
@@ -2823,7 +2823,7 @@ require([
       await map.layers.add(prism22_6);
       await map.layers.add(prism22_7);
       await map.layers.add(prism22_8);
-    }, 745000);
+    }, 188000);
   };
   addGeojson31();
 
@@ -2833,7 +2833,7 @@ require([
       await map.layers.add(prism22_10);
       await map.layers.add(prism22_11);
       await map.layers.add(prism22_12);
-    }, 755000);
+    }, 194000);
   };
   addGeojson32();
 
@@ -2843,7 +2843,7 @@ require([
       await map.layers.add(prism22_14);
       await map.layers.add(prism22_15);
       await map.layers.add(prism22_16);
-    }, 765000);
+    }, 200000);
   };
   addGeojson33();
   async function viewMap() {
