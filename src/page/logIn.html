@@ -46,7 +46,7 @@
         <form class="modal-content animate" method="post">
           <div class="container">
             <div class="icon">
-              <a href="./home.html"><i class="fa-solid fa-house-user"></i></a>
+              <a href="./index.html"><i class="fa-solid fa-house-user"></i></a>
             </div>
             <h2>Đăng nhập</h2>
             <label for="uname"
@@ -134,7 +134,7 @@
               localStorage.setItem("token", JSON.stringify(data.token));
               notyf.success("Bạn đã đăng nhập thành công");
               setTimeout(() => {
-                window.location.href = "./home.html";
+                window.location.href = "./index.html";
               }, 2000);
             } else {
               notyf.error("Tài khoản của bạn không hợp lệ");
