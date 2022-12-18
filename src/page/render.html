@@ -43,7 +43,7 @@
         <ul>
           <li>
             <a
-              href="./"
+              href="./home.html"
               class="header-nav-link"
               onclick="activeNavLinkHeader(this)"
               >Trang chủ</a
@@ -53,7 +53,7 @@
             <a
               class="header-nav-link"
               onclick="activeNavLinkHeader(this)"
-              href="./visit"
+              href="./visit.html"
               >Tham quan</a
             >
           </li>
@@ -61,7 +61,7 @@
             <a
               class="header-nav-link header-active"
               onclick="activeNavLinkHeader(this)"
-              href="./3dMap"
+              href="./render.html"
               >Bản đồ 3D</a
             >
           </li>
@@ -69,7 +69,7 @@
             <a
               class="header-nav-link"
               onclick="activeNavLinkHeader(this)"
-              href="./contact"
+              href="./contact.html"
               >Liên hệ</a
             >
           </li>
@@ -86,7 +86,7 @@
         />
       </div>
 
-      <a id="btnLogIn" href="./logIn" class="btn-login">Đăng nhập</a>
+      <a id="btnLogIn" href="./logIn.html" class="btn-login">Đăng nhập</a>
     </header>
     <h1 class="d3-map-title">Bản đồ 3D</h1>
     <div class="information-management-render-container">
@@ -105,7 +105,7 @@
           <span class="close-btn">&times;</span>
           <div class="header-modal-container">
             <h4 class="modal-title">Giới thiệu về Dinh độc lập</h4>
-            <a href="./contact">
+            <a href="./contact.html">
               <button class="feedback-btn">Góp ý</button>
             </a>
           </div>
@@ -125,7 +125,7 @@
           <span class="close-btn">&times;</span>
           <div class="header-modal-container">
             <h4 class="modal-title">Thông tin về kiến trúc Dinh độc lập</h4>
-            <a href="./contact">
+            <a href="./contact.html">
               <button class="feedback-btn">Góp ý</button>
             </a>
           </div>
@@ -145,7 +145,7 @@
           <span class="close-btn">&times;</span>
           <div class="header-modal-container">
             <h4 class="modal-title">Thông tin các tầng Dinh độc lập</h4>
-            <a href="./contact">
+            <a href="./contact.html">
               <button class="feedback-btn">Góp ý</button>
             </a>
           </div>
@@ -183,7 +183,7 @@
           <span class="close-btn">&times;</span>
           <div class="header-modal-container">
             <h4 class="modal-title">Các địa điểm tham quan Dinh Độc Lập</h4>
-            <a href="./contact">
+            <a href="./contact.html">
               <button class="feedback-btn">Góp ý</button>
             </a>
           </div>
@@ -307,16 +307,16 @@
     <!-- Footer -->
     <footer class="container-footer">
       <div class="content-footer">
-        <a href="./" class="footer-logo">
+        <a href="./home.html" class="footer-logo">
           <img src="../images/Footer/Logo-1.png" alt="logo" />
         </a>
         <nav class="footer-nav">
           <h2>Liên kết</h2>
           <ul>
-            <li><a href="./">Trang chủ</a></li>
-            <li><a href="./visit">Tham quan</a></li>
-            <li><a href="./3dMap">Bản đồ 3D</a></li>
-            <li><a href="./contact">Liên hệ</a></li>
+            <li><a href="./home.html">Trang chủ</a></li>
+            <li><a href="./visit.html">Tham quan</a></li>
+            <li><a href="./render.html">Bản đồ 3D</a></li>
+            <li><a href="./contact.html">Liên hệ</a></li>
           </ul>
         </nav>
         <nav class="footer-nav">
@@ -373,7 +373,7 @@
         localStorage.removeItem("token");
         notyf.success("Bạn đã đăng xuất thành công!!");
         setTimeout(() => {
-          window.location = "./";
+          window.location = "./home.html";
         }, 1000);
       });
 
@@ -527,7 +527,7 @@
           notyf.error("Bạn cần đăng nhập để thực hiện chức năng này!");
         } else {
           if (token) {
-            window.location.href = "./update";
+            window.location.href = "./update.html";
           }
         }
       }
