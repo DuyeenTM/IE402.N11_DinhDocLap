@@ -15,8 +15,8 @@ app.use(express.static(__dirname + "/src"));
 app.get("/home", function (req, res) {
   res.sendFile(path.join(__dirname, "./src/page/home.html"));
 });
-app.get("/login", function (req, res) {
-  res.sendFile(path.join(__dirname, "./src/page/login.html"));
+app.get("/log-in", function (req, res) {
+  res.sendFile(path.join(__dirname, "./src/page/logIn.html"));
 });
 app.get("/visit", function (req, res) {
   res.sendFile(path.join(__dirname, "./src/page/visit.html"));
