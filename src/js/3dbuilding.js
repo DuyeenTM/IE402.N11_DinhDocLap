@@ -1256,27 +1256,10 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 0);
+    }, 225000);
   };
   addJson1();
 
-  const addJson = () => {
-    setTimeout(async () => {
-      esriRequest(
-        "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getAll",
-        json_options
-      ).then(function (response) {
-        var graphicsLayer = new GraphicsLayer();
-        response.data.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-        map.add(graphicsLayer);
-      });
-    }, 0);
-  };
-  addJson();
-
-  /*
   const addJson2 = () => {
     setTimeout(async () => {
       esriRequest(
@@ -2346,7 +2329,7 @@ require([
     }, 220000);
   };
   addJson30();
-*/
+
   const map = new Map({
     basemap: "topo-vector",
     ground: "world-elevation",
