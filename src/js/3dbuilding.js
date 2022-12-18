@@ -1192,7 +1192,8 @@ require([
     },
   };
   // request json
-  const addJson1 = () => {
+
+  const add1 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/bodyComp/getByName?name=body_comp1",
@@ -1235,6 +1236,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 5000);
+  };
+  add1();
+
+  const add2 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/curve/getByName?name=curve4",
         json_options
@@ -1255,33 +1262,33 @@ require([
           graphicsLayer.add(createGraphic(data));
         });
         map.add(graphicsLayer);
+        esriRequest(
+          "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon1_1",
+          json_options
+        ).then(function (response) {
+          var graphicsLayer = new GraphicsLayer();
+          response.data.forEach(function (data) {
+            graphicsLayer.add(createGraphic(data));
+          });
+          map.add(graphicsLayer);
+        });
+        esriRequest(
+          "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon1_2",
+          json_options
+        ).then(function (response) {
+          var graphicsLayer = new GraphicsLayer();
+          response.data.forEach(function (data) {
+            graphicsLayer.add(createGraphic(data));
+          });
+          map.add(graphicsLayer);
+        });
       });
-    }, 5000);
+    }, 15000);
   };
-  addJson1();
+  add2();
 
-  const addJson2 = () => {
+  const add3 = () => {
     setTimeout(async () => {
-      esriRequest(
-        "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon1_1",
-        json_options
-      ).then(function (response) {
-        var graphicsLayer = new GraphicsLayer();
-        response.data.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-        map.add(graphicsLayer);
-      });
-      esriRequest(
-        "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon1_2",
-        json_options
-      ).then(function (response) {
-        var graphicsLayer = new GraphicsLayer();
-        response.data.forEach(function (data) {
-          graphicsLayer.add(createGraphic(data));
-        });
-        map.add(graphicsLayer);
-      });
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon1_3",
         json_options
@@ -1312,12 +1319,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 15000);
-  };
-  addJson2();
-
-  const addJson3 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_1",
         json_options
@@ -1328,6 +1329,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 25000);
+  };
+  add3();
+
+  const add4 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_2",
         json_options
@@ -1368,11 +1375,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 25000);
+    }, 35000);
   };
-  addJson3();
+  add4();
 
-  const addJson4 = () => {
+  const add5 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_6",
@@ -1414,6 +1421,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 45000);
+  };
+  add5();
+
+  const add6 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_10",
         json_options
@@ -1424,12 +1437,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 35000);
-  };
-  addJson4();
-
-  const addJson5 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_11",
         json_options
@@ -1460,6 +1467,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 55000);
+  };
+  add6();
+
+  const add7 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_14",
         json_options
@@ -1480,11 +1493,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 45000);
+    }, 65000);
   };
-  addJson5();
+  add7();
 
-  const addJson6 = () => {
+  const add8 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_16",
@@ -1506,6 +1519,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 75000);
+  };
+  add8();
+
+  const add9 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_18",
         json_options
@@ -1536,12 +1555,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 55000);
-  };
-  addJson6();
-
-  const addJson7 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_21",
         json_options
@@ -1552,6 +1565,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 85000);
+  };
+  add9();
+
+  const add10 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_22",
         json_options
@@ -1592,11 +1611,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 65000);
+    }, 95000);
   };
-  addJson7();
+  add10();
 
-  const addJson8 = () => {
+  const add11 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_26",
@@ -1638,11 +1657,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 75000);
+    }, 105000);
   };
-  addJson8();
+  add11();
 
-  const addJson9 = () => {
+  const add12 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon2_30",
@@ -1684,11 +1703,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 85000);
+    }, 115000);
   };
-  addJson9();
+  add12();
 
-  const addJson10 = () => {
+  const add13 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_1",
@@ -1730,6 +1749,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 125000);
+  };
+  add13();
+
+  const add14 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_5",
         json_options
@@ -1740,12 +1765,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 315000);
-  };
-  addJson10();
-
-  const addJson11 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_6",
         json_options
@@ -1776,6 +1795,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 135000);
+  };
+  add14();
+
+  const add15 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_9",
         json_options
@@ -1796,12 +1821,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 325000);
-  };
-  addJson11();
-
-  const addJson12 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_11",
         json_options
@@ -1822,6 +1841,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 145000);
+  };
+  add15();
+
+  const add16 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_13",
         json_options
@@ -1852,12 +1877,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 335000);
-  };
-  addJson12();
-
-  const addJson13 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_16",
         json_options
@@ -1868,6 +1887,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 155000);
+  };
+  add16();
+
+  const add17 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_17",
         json_options
@@ -1908,11 +1933,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 345000);
+    }, 165000);
   };
-  addJson13();
+  add17();
 
-  const addJson14 = () => {
+  const add18 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon3_21",
@@ -1954,11 +1979,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 355000);
+    }, 175000);
   };
-  addJson14();
+  add18();
 
-  const addJson15 = () => {
+  const add19 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_1",
@@ -2000,6 +2025,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 195000);
+  };
+  add19();
+
+  const add20 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_5",
         json_options
@@ -2010,12 +2041,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 365000);
-  };
-  addJson15();
-
-  const addJson16 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_6",
         json_options
@@ -2046,6 +2071,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 205000);
+  };
+  add20();
+
+  const add21 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_9",
         json_options
@@ -2066,12 +2097,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 375000);
-  };
-  addJson16();
-
-  const addJson17 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_11",
         json_options
@@ -2092,6 +2117,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 225000);
+  };
+  add21();
+
+  const add22 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_13",
         json_options
@@ -2122,12 +2153,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 385000);
-  };
-  addJson17();
-
-  const addJson18 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_16",
         json_options
@@ -2138,6 +2163,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 225000);
+  };
+  add22();
+
+  const add23 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_17",
         json_options
@@ -2178,11 +2209,11 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 395000);
+    }, 235000);
   };
-  addJson18();
+  add23();
 
-  const addJson19 = () => {
+  const add24 = () => {
     setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_21",
@@ -2224,6 +2255,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 245000);
+  };
+  add24();
+
+  const add25 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_25",
         json_options
@@ -2234,12 +2271,6 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 405000);
-  };
-  addJson19();
-
-  const addJson20 = () => {
-    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_26",
         json_options
@@ -2270,6 +2301,12 @@ require([
         });
         map.add(graphicsLayer);
       });
+    }, 255000);
+  };
+  add25();
+
+  const add26 = () => {
+    setTimeout(async () => {
       esriRequest(
         "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/polygon/getByName?name=polygon4_29",
         json_options
@@ -2326,9 +2363,9 @@ require([
         });
         map.add(graphicsLayer);
       });
-    }, 425000);
+    }, 265000);
   };
-  addJson30();
+  add26();
 
   const map = new Map({
     basemap: "topo-vector",
@@ -2336,288 +2373,336 @@ require([
   });
 
   // request geojson
-  const addCylinder1 = () => {
+
+  const addJeojson1 = () => {
     setTimeout(async () => {
       await map.layers.add(cylinder1);
       await map.layers.add(cylinder2_1);
       await map.layers.add(cylinder2_2);
       await map.layers.add(cylinder2_3);
+    }, 285000);
+  };
+  addJeojson1();
+
+  const addJeojson2 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder2_4);
       await map.layers.add(cylinder2_5);
-    }, 105000);
-  };
-  addCylinder1();
-
-  const addCylinder2 = () => {
-    setTimeout(async () => {
       await map.layers.add(cylinder2_6);
       await map.layers.add(cylinder4_1);
+    }, 295000);
+  };
+  addJeojson2();
+
+  const addJeojson3 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder4_2);
       await map.layers.add(cylinder4_3);
       await map.layers.add(cylinder4_4);
-    }, 265000);
-  };
-  addCylinder2();
-
-  const addCylinder3 = () => {
-    setTimeout(async () => {
       await map.layers.add(cylinder3_1);
+    }, 305000);
+  };
+  addJeojson3();
+
+  const addJeojson4 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder3_2);
       await map.layers.add(cylinder3_3);
       await map.layers.add(cylinder3_4);
       await map.layers.add(cylinder3_5);
-    }, 275000);
+    }, 315000);
   };
-  addCylinder3();
+  addJeojson4();
 
-  const addCylinder4 = () => {
+  const addJeojson5 = () => {
     setTimeout(async () => {
       await map.layers.add(cylinder3_6);
       await map.layers.add(cylinder3_7);
       await map.layers.add(cylinder3_8);
       await map.layers.add(cylinder3_9);
-      await map.layers.add(cylinder3_10);
-    }, 285000);
+    }, 325000);
   };
-  addCylinder4();
+  addJeojson5();
 
-  const addCylinder5 = () => {
+  const addJeojson6 = () => {
     setTimeout(async () => {
+      await map.layers.add(cylinder3_10);
       await map.layers.add(cylinder3_11);
       await map.layers.add(cylinder3_12);
       await map.layers.add(cylinder3_13);
+    }, 335000);
+  };
+  addJeojson6();
+
+  const addJeojson7 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder3_14);
       await map.layers.add(cylinder3_15);
-    }, 295000);
-  };
-  addCylinder5();
-
-  const addCylinder6 = () => {
-    setTimeout(async () => {
       await map.layers.add(cylinder3_16);
       await map.layers.add(cylinder3_17);
+    }, 345000);
+  };
+  addJeojson7();
+
+  const addJeojson8 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder3_18);
       await map.layers.add(cylinder3_19);
       await map.layers.add(cylinder3_20);
-    }, 305000);
-  };
-  addCylinder6();
-
-  const addCylinder7 = () => {
-    setTimeout(async () => {
       await map.layers.add(cylinder3_21);
+    }, 355000);
+  };
+  addJeojson8();
+
+  const addJeojson9 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder3_22);
       await map.layers.add(cylinder3_23);
       await map.layers.add(cylinder3_24);
       await map.layers.add(cylinder3_25);
-    }, 145000);
+    }, 365000);
   };
-  addCylinder7();
+  addJeojson9();
 
-  const addCylinder8 = () => {
+  const addJeojson10 = () => {
     setTimeout(async () => {
       await map.layers.add(cylinder3_26);
       await map.layers.add(cylinder3_27);
       await map.layers.add(cylinder3_28);
       await map.layers.add(cylinder3_29);
-      await map.layers.add(cylinder3_30);
-    }, 150000);
+    }, 375000);
   };
-  addCylinder8();
+  addJeojson10();
 
-  const addCylinder9 = () => {
+  const addJeojson11 = () => {
     setTimeout(async () => {
+      await map.layers.add(cylinder3_30);
       await map.layers.add(cylinder3_31);
       await map.layers.add(cylinder3_32);
       await map.layers.add(cylinder3_33);
+    }, 385000);
+  };
+  addJeojson11();
+
+  const addJeojson12 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder3_34);
       await map.layers.add(cylinder3_35);
-    }, 155000);
-  };
-  addCylinder9();
-
-  const addCylinder10 = () => {
-    setTimeout(async () => {
       await map.layers.add(cylinder3_36);
       await map.layers.add(cylinder3_37);
+    }, 395000);
+  };
+  addJeojson12();
+
+  const addJeojson13 = () => {
+    setTimeout(async () => {
       await map.layers.add(cylinder3_38);
       await map.layers.add(cylinder3_39);
       await map.layers.add(cylinder3_40);
-    }, 160000);
-  };
-  addCylinder10();
-
-  const addLine1 = () => {
-    setTimeout(async () => {
       await map.layers.add(line1);
+    }, 405000);
+  };
+  addJeojson13();
+
+  const addJeojson14 = () => {
+    setTimeout(async () => {
       await map.layers.add(line2);
       await map.layers.add(line3);
       await map.layers.add(line4);
       await map.layers.add(line5_1);
+    }, 4150000);
+  };
+  addJeojson14();
+
+  const addJeojson15 = () => {
+    setTimeout(async () => {
       await map.layers.add(line5_2);
       await map.layers.add(line6_1);
-    }, 115000);
-  };
-  addLine1();
-
-  const addLine2 = () => {
-    setTimeout(async () => {
       await map.layers.add(line6_2);
       await map.layers.add(line7_1);
+    }, 425000);
+  };
+  addJeojson15();
+
+  const addJeojson16 = () => {
+    setTimeout(async () => {
       await map.layers.add(line7_2);
       await map.layers.add(line7_3);
       await map.layers.add(line7_4);
       await map.layers.add(line7_5);
-    }, 125000);
+    }, 435000);
   };
-  addLine2();
+  addJeojson16();
 
-  const addPrism1 = () => {
+  const addJeojson17 = () => {
     setTimeout(async () => {
       await map.layers.add(prism1);
       await map.layers.add(prism2);
       await map.layers.add(prism3);
       await map.layers.add(prism4_1);
-      await map.layers.add(prism4_2);
-    }, 135000);
+    }, 445000);
   };
-  addPrism1();
+  addJeojson17();
 
-  const addPrism2 = () => {
+  const addJeojson18 = () => {
     setTimeout(async () => {
+      await map.layers.add(prism4_2);
       await map.layers.add(prism5_1);
       await map.layers.add(prism5_2);
       await map.layers.add(prism6);
+    }, 455000);
+  };
+  addJeojson18();
+
+  const addJeojson19 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism7);
       await map.layers.add(prism8_1);
-    }, 145000);
-  };
-  addPrism2();
-
-  const addPrism3 = () => {
-    setTimeout(async () => {
       await map.layers.add(prism8_2);
       await map.layers.add(prism9_1);
+    }, 465000);
+  };
+  addJeojson19();
+
+  const addJeojson20 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism9_2);
       await map.layers.add(prism9_3);
       await map.layers.add(prism9_4);
-    }, 155000);
-  };
-  addPrism3();
-
-  const addPrism4 = () => {
-    setTimeout(async () => {
       await map.layers.add(prism10_1);
+    }, 475000);
+  };
+  addJeojson20();
+
+  const addJeojson21 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism10_2);
       await map.layers.add(prism10_3);
       await map.layers.add(prism11_1);
       await map.layers.add(prism11_2);
-    }, 165000);
+    }, 485000);
   };
-  addPrism4();
+  addJeojson21();
 
-  const addPrism41 = () => {
+  const addGeojson22 = () => {
     setTimeout(async () => {
       await map.layers.add(prism12_1);
       await map.layers.add(prism12_2);
       await map.layers.add(prism12_3);
       await map.layers.add(prism12_4);
-      await map.layers.add(prism12_5);
-    }, 175000);
+    }, 495000);
   };
-  addPrism41();
+  addGeojson22();
 
-  const addPrism5 = () => {
+  const addGeojson23 = () => {
     setTimeout(async () => {
+      await map.layers.add(prism12_5);
       await map.layers.add(prism12_6);
       await map.layers.add(prism12_7);
       await map.layers.add(prism12_8);
+    }, 145000);
+  };
+  addGeojson23();
+
+  const addGeojson24 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism13_1);
       await map.layers.add(prism13_2);
-    }, 185000);
-  };
-  addPrism5();
-
-  const addPrism6 = () => {
-    setTimeout(async () => {
       await map.layers.add(prism13_3);
       await map.layers.add(prism13_4);
+    }, 505000);
+  };
+  addGeojson24();
+
+  const addGeojson25 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism14_1);
       await map.layers.add(prism14_2);
       await map.layers.add(prism15);
-    }, 195000);
-  };
-  addPrism6();
-
-  const addPrism7 = () => {
-    setTimeout(async () => {
       await map.layers.add(prism16);
+    }, 515000);
+  };
+  addGeojson25();
+
+  const addGeojson26 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism17);
       await map.layers.add(prism18_1);
       await map.layers.add(prism18_2);
       await map.layers.add(prism19);
-    }, 205000);
+    }, 525000);
   };
-  addPrism7();
+  addGeojson26();
 
-  const addPrism7a = () => {
+  const addGeojson27 = () => {
     setTimeout(async () => {
       await map.layers.add(prism20);
       await map.layers.add(prism21);
       await map.layers.add(prism23);
       await map.layers.add(prism24);
+    }, 535000);
+  };
+  addGeojson27();
+
+  const addGeojson28 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism25);
       await map.layers.add(prism26);
-    }, 215000);
-  };
-  addPrism7a();
-
-  const addPrism7b = () => {
-    setTimeout(async () => {
       await map.layers.add(prism27_1);
       await map.layers.add(prism27_2);
+    }, 545000);
+  };
+  addGeojson28();
+
+  const addGeojson29 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism28_1);
       await map.layers.add(prism28_2);
       await map.layers.add(prism29);
       await map.layers.add(prism30);
-    }, 225000);
+    }, 555000);
   };
-  addPrism7b();
+  addGeojson29();
 
-  const addPrism8 = () => {
+  const addGeojson30 = () => {
     setTimeout(async () => {
       await map.layers.add(prism22_1);
       await map.layers.add(prism22_2);
       await map.layers.add(prism22_3);
       await map.layers.add(prism22_4);
-      await map.layers.add(prism22_5);
-    }, 235000);
+    }, 565000);
   };
-  addPrism8();
+  addGeojson30();
 
-  const addPrism9 = () => {
+  const addGeojson31 = () => {
     setTimeout(async () => {
+      await map.layers.add(prism22_5);
       await map.layers.add(prism22_6);
       await map.layers.add(prism22_7);
       await map.layers.add(prism22_8);
+    }, 575000);
+  };
+  addGeojson31();
+
+  const addGeojson32 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism22_9);
       await map.layers.add(prism22_10);
-    }, 245000);
-  };
-  addPrism9();
-
-  const addPrism10 = () => {
-    setTimeout(async () => {
       await map.layers.add(prism22_11);
       await map.layers.add(prism22_12);
+    }, 585000);
+  };
+  addGeojson32();
+
+  const addGeojson33 = () => {
+    setTimeout(async () => {
       await map.layers.add(prism22_13);
       await map.layers.add(prism22_14);
       await map.layers.add(prism22_15);
       await map.layers.add(prism22_16);
-    }, 255000);
+    }, 595000);
   };
-  addPrism10();
-
+  addGeojson33();
   async function viewMap() {
     const view = await new SceneView({
       container: "viewDiv",
