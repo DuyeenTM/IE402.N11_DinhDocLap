@@ -115,7 +115,8 @@
       const form = document.querySelector("form");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        const login = "http://localhost:3000/api/v1/auth/login";
+        const login =
+          "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/auth/login";
 
         fetch(login, {
           method: "POST",

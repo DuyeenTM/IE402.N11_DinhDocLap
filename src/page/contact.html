@@ -249,7 +249,8 @@
       const form = document.querySelector("form");
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        const postFeedback = "http://localhost:3000/api/v1/feedback/post";
+        const postFeedback =
+          "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/feedback/post";
 
         fetch(postFeedback, {
           method: "POST",

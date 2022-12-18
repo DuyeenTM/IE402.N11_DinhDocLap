@@ -1,4 +1,5 @@
-var informationApi = "http://localhost:3000/api/v1/info/get";
+var informationApi =
+  "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/info/get";
 
 function start() {
   getInformation(renderInformation);
@@ -111,7 +112,10 @@ function updateInfor(data, callback) {
     },
     body: JSON.stringify(data),
   };
-  fetch("http://localhost:3000/api/v1/info/update", options)
+  fetch(
+    "https://ie-402-dinh-doc-954kxw01e-duyeentm.vercel.app/api/v1/info/update",
+    options
+  )
     .then(function (response) {
       response.json;
     })
